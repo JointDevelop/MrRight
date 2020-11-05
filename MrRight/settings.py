@@ -84,7 +84,7 @@ DATABASES = {
         'PASSWORD':'123456',
         'HOST':'localhost',
         'PORT':3306,
-        'NAME':'remote_MrRight'
+        'NAME':'MrRight'
     }
 }
 
