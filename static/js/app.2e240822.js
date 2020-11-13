@@ -253,14 +253,14 @@
                     button_clicked: function () {
                         !1 === this.seen ? this.get_vcode() : this.submit_vcode()
                     }, get_vcode: function () {
-                        q["a"].get("/api/user/get_vcode", {params: {phonenum: this.phonenum}}).then((function (t) {
+                        q["a"].get("/api/user/vcode/fetch", {params: {phonenum: this.phonenum}}).then((function (t) {
                             0 === t.data.code ? (alert("消息已发送，请查看手机短信"), alert("短信太贵，我直接告诉你吧，验证码是 ".concat(t.data.data.vcode))) : alert("发送失败：".concat(t.data.data))
                         })).catch((function (t) {
                             return console.log(t)
                         })), this.seen = !0, this.btn_text = "登陆"
                     }, submit_vcode: function () {
                         var t = this;
-                        q["a"].post("/api/user/submit_vcode", {
+                        q["a"].post("/api/user/vcode/submit", {
                             phonenum: this.phonenum,
                             vcode: this.vcode
                         }).then((function (e) {
@@ -346,7 +346,7 @@
                 }, methods: {
                     show_more: function () {
                         var t = this;
-                        void 0 === this.self.profile.dating_gender && (console.log("从服务器获取 profile"), q["a"].get("/api/user/get_profile").then((function (e) {
+                        void 0 === this.self.profile.dating_gender && (console.log("从服务器获取 profile"), q["a"].get("/api/user/profile/show").then((function (e) {
                             var a = new k(e.data.data);
                             t.self.set_profile(a)
                         }))), this.profile_btn = !1
