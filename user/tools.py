@@ -46,5 +46,5 @@ def send_vcode(phone):
 def gen_random_nickname(length=8):
     '''generate an random nickname'''
     nameRange = '1234567890'
-    nickname = ''.join(random.choices(nameRange,length))
+    nickname = ''.join(random.choices(nameRange,k=length))
     return nickname
