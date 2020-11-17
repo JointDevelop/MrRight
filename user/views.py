@@ -3,9 +3,11 @@ from django.shortcuts import render
 from common import keys
 from libs.cache import rds
 from user.models import User
+from user.models import Profile
 from user.tools import send_vcode, gen_random_nickname
 from django.core.cache import cache
-
+from user.forms import UserForm
+from user.forms import ProfileForm
 
 
 def fetch_vcode(request):
@@ -23,7 +25,7 @@ def submit_vcode(request):
     vcode = request.POST.get('vcode')
     key = keys.VCODE_KEY % phonenum
     cached_Vcode = rds.get(key).decode('utf8')
-    print(phonenum, vcode, key,cached_Vcode)
+    print(phonenum, vcode, key, cached_Vcode)
     if cached_Vcode and vcode == cached_Vcode:
         try:
             user = User.objects.get(phonenum=phonenum)
@@ -40,11 +42,24 @@ def submit_vcode(request):
 
 
 def show_profile(request):
-    return JsonResponse({})
+    uid = request.session['uid']
+    user = User.objects.get(pk=uid)
+    return JsonResponse({'code': 0, 'data': user.profile.to_dict()})
 
 
 def update_profile(request):
-    return JsonResponse({})
+    user_form = UserForm(request.POST)
+    profile_form = ProfileForm(request.POST)
+    if user_form.is_valid() and profile_form.is_valid():
+        uid = request.session['uid']
+        User.objects.updata_or_create(id=uid, defaults= user_form.cleaned_data)
+        Profile.objects.updata_or_create(id=uid, defaults= profile_form.cleaned_data)
+        return JsonResponse({'code': 0, 'data': None})
+    else:
+        err = {}
+        err.update(user_form.errors)
+        err.update(profile_form.errors)
+        return JsonResponse({'code': 1003, 'data': err})
 
 
 def get_qn_token(request):
