@@ -12,7 +12,7 @@ class UserForm(forms.ModelForm):
             'nickname',
             'gender',
             'birthday',
-            'locatio'
+            'location'
         ]
 
 
