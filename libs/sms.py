@@ -22,7 +22,7 @@ def make_signature(args):
     return sign_str
 
 
-def send_sms(phone, vcode):
+def send_sms(phone, vcode) -> object:
     '''send phone message to user by calliing platform'''
     args = {
         'appid': APPID,

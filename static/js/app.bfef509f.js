@@ -1,7 +1,7 @@
 (function (t) {
     function e(e) {
-        for (var r, i, o = e[0], l = e[1], c = e[2], d = 0, p = []; d < o.length; d++) i = o[d], Object.prototype.hasOwnProperty.call(s, i) && s[i] && p.push(s[i][0]), s[i] = 0;
-        for (r in l) Object.prototype.hasOwnProperty.call(l, r) && (t[r] = l[r]);
+        for (var s, i, o = e[0], l = e[1], c = e[2], d = 0, p = []; d < o.length; d++) i = o[d], Object.prototype.hasOwnProperty.call(r, i) && r[i] && p.push(r[i][0]), r[i] = 0;
+        for (s in l) Object.prototype.hasOwnProperty.call(l, s) && (t[s] = l[s]);
         u && u(e);
         while (p.length) p.shift()();
         return n.push.apply(n, c || []), a()
@@ -9,24 +9,24 @@
 
     function a() {
         for (var t, e = 0; e < n.length; e++) {
-            for (var a = n[e], r = !0, o = 1; o < a.length; o++) {
+            for (var a = n[e], s = !0, o = 1; o < a.length; o++) {
                 var l = a[o];
-                0 !== s[l] && (r = !1)
+                0 !== r[l] && (s = !1)
             }
-            r && (n.splice(e--, 1), t = i(i.s = a[0]))
+            s && (n.splice(e--, 1), t = i(i.s = a[0]))
         }
         return t
     }
 
-    var r = {}, s = {app: 0}, n = [];
+    var s = {}, r = {app: 0}, n = [];
 
     function i(e) {
-        if (r[e]) return r[e].exports;
-        var a = r[e] = {i: e, l: !1, exports: {}};
+        if (s[e]) return s[e].exports;
+        var a = s[e] = {i: e, l: !1, exports: {}};
         return t[e].call(a.exports, a, a.exports, i), a.l = !0, a.exports
     }
 
-    i.m = t, i.c = r, i.d = function (t, e, a) {
+    i.m = t, i.c = s, i.d = function (t, e, a) {
         i.o(t, e) || Object.defineProperty(t, e, {enumerable: !0, get: a})
     }, i.r = function (t) {
         "undefined" !== typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(t, "__esModule", {value: !0})
@@ -37,9 +37,9 @@
         if (i.r(a), Object.defineProperty(a, "default", {
             enumerable: !0,
             value: t
-        }), 2 & e && "string" != typeof t) for (var r in t) i.d(a, r, function (e) {
+        }), 2 & e && "string" != typeof t) for (var s in t) i.d(a, s, function (e) {
             return t[e]
-        }.bind(null, r));
+        }.bind(null, s));
         return a
     }, i.n = function (t) {
         var e = t && t.__esModule ? function () {
@@ -61,85 +61,70 @@
         t.exports = a("56d7")
     }, "034f": function (t, e, a) {
         "use strict";
-        var r = a("85ec"), s = a.n(r);
-        s.a
-    }, "0658": function (t, e, a) {
-        "use strict";
-        var r = a("427e"), s = a.n(r);
-        s.a
-    }, "0692": function (t, e, a) {
-    }, "0800": function (t, e, a) {
+        var s = a("85ec"), r = a.n(s);
+        r.a
     }, "0f4a": function (t, e, a) {
         t.exports = a.p + "img/super-txt.df2733dc.png"
     }, 1784: function (t, e, a) {
         t.exports = a.p + "img/nope.f6495931.png"
-    }, "1b81": function (t, e, a) {
-        "use strict";
-        var r = a("2699"), s = a.n(r);
-        s.a
     }, "1d45": function (t, e, a) {
         t.exports = a.p + "img/x.7ce208e6.svg"
-    }, 2699: function (t, e, a) {
     }, "2d23": function (t, e, a) {
-    }, "2e02": function (t, e, a) {
-        "use strict";
-        var r = a("0692"), s = a.n(r);
-        s.a
     }, "31bb": function (t, e, a) {
         t.exports = a.p + "img/exit.4fd2cd61.svg"
     }, "340d": function (t, e, a) {
         t.exports = a.p + "img/rewind.d3f6ac8f.png"
-    }, 3646: function (t, e, a) {
-        "use strict";
-        var r = a("0800"), s = a.n(r);
-        s.a
-    }, "3f11": function (t, e, a) {
     }, "408e": function (t, e, a) {
         t.exports = a.p + "img/rewind-txt.d88df357.png"
     }, "410e": function (t, e, a) {
         t.exports = a.p + "img/menu-a.b339b316.svg"
-    }, "427e": function (t, e, a) {
     }, "447c": function (t, e, a) {
         "use strict";
-        var r = a("2d23"), s = a.n(r);
-        s.a
-    }, "4fa9": function (t, e, a) {
+        var s = a("2d23"), r = a.n(s);
+        r.a
     }, "4ffd": function (t, e, a) {
         t.exports = a.p + "img/logo.b9825f81.png"
+    }, "522a": function (t, e, a) {
+        "use strict";
+        var s = a("fce8"), r = a.n(s);
+        r.a
     }, 5234: function (t, e, a) {
         t.exports = a.p + "img/friends.720bd696.svg"
+    }, 5254: function (t, e, a) {
+        "use strict";
+        var s = a("d306"), r = a.n(s);
+        r.a
     }, "52ea": function (t, e, a) {
         t.exports = a.p + "img/swiper-a.8992db57.png"
     }, 5415: function (t, e, a) {
         t.exports = a.p + "img/user.657d237a.svg"
-    }, 5498: function (t, e, a) {
     }, "56d7": function (t, e, a) {
         "use strict";
         a.r(e);
         a("e260"), a("e6cf"), a("cca6"), a("a79d");
-        var r = a("2b0e"), s = (a("ab8b"), a("3e48"), function () {
+        var s = a("2b0e"), r = (a("ab8b"), a("3e48"), function () {
                 var t = this, e = t.$createElement, a = t._self._c || e;
                 return a("div", {attrs: {id: "app"}}, [t.show_nav ? a("Navbar") : t._e(), a("router-view", {attrs: {self: t.self}})], 1)
             }), n = [], i = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "holder"}, [r("nav", {staticClass: "navbar navbar-light bg-light fixed-top"}, [r("router-link", {attrs: {to: "/user/show"}}, ["/user/show" === this.$route.path ? r("img", {
-                    staticClass: "icon navbar-brand",
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "nav-holder"}, [s("nav", {staticClass: "navbar navbar-light bg-light fixed-top"}, [s("router-link", {attrs: {to: "/user/show"}}, ["/user/show" === this.$route.path ? s("img", {
+                    staticClass: "nav-icon navbar-brand",
                     attrs: {src: a("6270")}
-                }) : r("img", {
-                    staticClass: "icon navbar-brand",
+                }) : s("img", {
+                    staticClass: "nav-icon navbar-brand",
                     attrs: {src: a("5415")}
-                })]), r("router-link", {attrs: {to: "/swiper"}}, ["/swiper" === this.$route.path ? r("img", {
-                    staticClass: "icon navbar-brand",
+                })]), s("router-link", {attrs: {to: "/swiper"}}, ["/swiper" === this.$route.path ? s("img", {
+                    staticClass: "nav-icon navbar-brand",
                     attrs: {src: a("52ea")}
-                }) : r("img", {
-                    staticClass: "icon navbar-brand",
+                }) : s("img", {
+                    staticClass: "nav-icon navbar-brand",
                     attrs: {src: a("dbdc")}
-                })]), r("router-link", {attrs: {to: "/menu"}}, ["/menu" === this.$route.path ? r("img", {
-                    staticClass: "icon navbar-brand",
+                })]), s("router-link", {attrs: {to: "/menu"}}, ["/menu" === this.$route.path ? s("img", {
+                    staticClass: "nav-icon navbar-brand",
                     attrs: {src: a("410e")}
-                }) : r("img", {staticClass: "icon navbar-brand", attrs: {src: a("67f9")}})])], 1)])
-            }, o = [], l = {name: "Navbar"}, c = l, u = (a("a1d9"), a("2877")),
-            d = Object(u["a"])(c, i, o, !1, null, "4f4def66", null), p = d.exports, f = {
+                }) : s("img", {staticClass: "nav-icon navbar-brand", attrs: {src: a("67f9")}})])], 1)])
+            }, o = [], l = {name: "Navbar"}, c = l, u = (a("522a"), a("2877")),
+            d = Object(u["a"])(c, i, o, !1, null, "aedfca7e", null), p = d.exports, f = {
                 name: "App", components: {Navbar: p}, computed: {
                     self: function () {
                         return this.$store.state.self
@@ -147,7 +132,7 @@
                         return "/" !== this.$route.path && "/login" !== this.$route.path
                     }
                 }
-            }, m = f, _ = (a("034f"), Object(u["a"])(m, s, n, !1, null, null, null)), v = _.exports, h = a("2f62"),
+            }, _ = f, m = (a("034f"), Object(u["a"])(_, r, n, !1, null, null, null)), v = m.exports, h = a("2f62"),
             g = a("d4ec"), b = a("bee2"), C = function () {
                 function t(e) {
                     Object(g["a"])(this, t), this.id = e.id, this.nickname = e.nickname, this.phonenum = e.phonenum, this.gender = e.gender, this.birthday = e.birthday, this.location = e.location, this.avatar = e.avatar, this.profile = new k({})
@@ -176,7 +161,7 @@
                 }]), t
             }(), k = function () {
                 function t(e) {
-                    Object(g["a"])(this, t), this.dating_gender = e.dating_gender, this.dating_location = e.dating_location, this.min_distance = e.min_distance, this.max_distance = e.max_distance, this.min_dating_age = e.min_dating_age, this.max_dating_age = e.max_dating_age, this.vibration = e.vibration, this.only_matche = e.only_matche, this.auto_play = e.auto_play
+                    Object(g["a"])(this, t), this.dating_gender = e.dating_gender, this.dating_location = e.dating_location, this.min_distance = e.min_distance, this.max_distance = e.max_distance, this.min_dating_age = e.min_dating_age, this.max_dating_age = e.max_dating_age, this.vibration = e.vibration, this.only_matched = e.only_matched, this.auto_play = e.auto_play
                 }
 
                 return Object(b["a"])(t, [{
@@ -187,7 +172,7 @@
                     }
                 }]), t
             }();
-        r["a"].use(h["a"]);
+        s["a"].use(h["a"]);
         var w = new h["a"].Store({
                 state: {self: void 0, queue: []}, mutations: {
                     set_self: function (t, e) {
@@ -238,129 +223,127 @@
                         }
                     }
                 }, [t._v(t._s(t.btn_text))])])])
-            }, E = [function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "logo"}, [r("img", {
+            }, q = [function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "logo"}, [s("img", {
                     attrs: {
                         width: "200px",
                         src: a("4ffd")
                     }
-                }), r("h1", [t._v("Swiper")])])
-            }], q = a("b1d0"), $ = {
+                }), s("h1", [t._v("Swiper")])])
+            }], E = a("b1d0"), $ = {
                 name: "Login", props: ["self"], data: function () {
                     return {phonenum: "", vcode: "", seen: !1, btn_text: "发送验证码"}
                 }, methods: {
                     button_clicked: function () {
                         !1 === this.seen ? this.get_vcode() : this.submit_vcode()
                     }, get_vcode: function () {
-                        q["a"].get("/api/user/vcode/fetch", {params: {phonenum: this.phonenum}}).then((function (t) {
-                            0 === t.data.code ? (alert("消息已发送，请查看手机短信"), alert("短信太贵，我直接告诉你吧，验证码是 ".concat(t.data.data.vcode))) : alert("发送失败：".concat(t.data.data))
-                        })).catch((function (t) {
-                            return console.log(t)
+                        E["a"].get("/api/user/vcode/fetch", {params: {phonenum: this.phonenum}}).then((function (t) {
+                            0 === t.data.code && alert("消息已发送，请查看手机短信")
                         })), this.seen = !0, this.btn_text = "登陆"
                     }, submit_vcode: function () {
                         var t = this;
-                        q["a"].post("/api/user/vcode/submit", {
+                        E["a"].post("/api/user/vcode/submit", {
                             phonenum: this.phonenum,
                             vcode: this.vcode
                         }).then((function (e) {
                             if (0 === e.data.code) {
                                 var a = new C(e.data.data);
                                 t.$store.commit("set_self", a), t.$router.push("/user/show")
-                            } else alert("发送失败：".concat(e.data.data))
+                            }
                         }))
                     }
                 }
-            }, P = $, j = (a("f7b9"), Object(u["a"])(P, O, E, !1, null, "152570c3", null)), A = j.exports, M = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "list-group"}, [r("router-link", {
-                    staticClass: "list-group-item list-group-item-action item",
+            }, P = $, j = (a("f4e9"), Object(u["a"])(P, O, q, !1, null, "c69a6bbc", null)), A = j.exports, M = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "list-group"}, [s("router-link", {
+                    staticClass: "list-group-item list-group-item-action list-item",
                     attrs: {to: "/swiper"}
-                }, [r("img", {
+                }, [s("img", {
                     staticClass: "icon navbar-brand",
                     attrs: {src: a("790a")}
-                }), r("span", {staticClass: "item-text"}, [t._v("滑 一 滑")])]), r("router-link", {
-                    staticClass: "list-group-item list-group-item-action item",
+                }), s("span", {staticClass: "item-text"}, [t._v("滑一滑")])]), s("router-link", {
+                    staticClass: "list-group-item list-group-item-action list-item",
                     attrs: {to: "/fans"}
-                }, [r("img", {
+                }, [s("img", {
                     staticClass: "icon navbar-brand",
                     attrs: {src: a("5ec4")}
-                }), r("span", {staticClass: "item-text"}, [t._v("赞过我的人")])]), r("router-link", {
-                    staticClass: "list-group-item list-group-item-action item",
+                }), s("span", {staticClass: "item-text"}, [t._v("赞过我的人")])]), s("router-link", {
+                    staticClass: "list-group-item list-group-item-action list-item",
                     attrs: {to: "/hot/rank"}
-                }, [r("img", {
+                }, [s("img", {
                     staticClass: "icon navbar-brand",
                     attrs: {src: a("bdcd")}
-                }), r("span", {staticClass: "item-text"}, [t._v("热度排行")])]), r("router-link", {
-                    staticClass: "list-group-item list-group-item-action item",
+                }), s("span", {staticClass: "item-text"}, [t._v("热度排行")])]), s("router-link", {
+                    staticClass: "list-group-item list-group-item-action list-item",
                     attrs: {to: "/friends"}
-                }, [r("img", {
+                }, [s("img", {
                     staticClass: "icon navbar-brand",
                     attrs: {src: a("5234")}
-                }), r("span", {staticClass: "item-text"}, [t._v("我的好友")])]), r("router-link", {
-                    staticClass: "list-group-item list-group-item-action item",
+                }), s("span", {staticClass: "item-text"}, [t._v("我的好友")])]), s("router-link", {
+                    staticClass: "list-group-item list-group-item-action list-item",
                     attrs: {to: "/user/show"}
-                }, [r("img", {
+                }, [s("img", {
                     staticClass: "icon navbar-brand",
                     attrs: {src: a("5415")}
-                }), r("span", {staticClass: "item-text"}, [t._v("用户中心")])]), r("router-link", {
-                    staticClass: "list-group-item list-group-item-action item",
+                }), s("span", {staticClass: "item-text"}, [t._v("用户中心")])]), s("router-link", {
+                    staticClass: "list-group-item list-group-item-action list-item",
                     attrs: {to: "/login"},
                     nativeOn: {
                         click: function (e) {
                             return t.exit()
                         }
                     }
-                }, [r("img", {
+                }, [s("img", {
                     staticClass: "icon navbar-brand",
                     attrs: {src: a("31bb")}
-                }), r("span", {staticClass: "item-text"}, [t._v("退出")])])], 1)
-            }, D = [], N = {
+                }), s("span", {staticClass: "item-text"}, [t._v("退出")])])], 1)
+            }, D = [], T = {
                 name: "Menu", methods: {
                     exit: function () {
                         console.log("退出！重置 self 对象"), this.$store.commit("reset_self")
                     }
                 }
-            }, T = N, U = (a("6d40"), Object(u["a"])(T, M, D, !1, null, "ab08195e", null)), R = U.exports, L = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "container-fluid box"}, [r("router-link", {attrs: {to: "/upload/avatar"}}, [t.self.avatar ? r("img", {
+            }, N = T, U = Object(u["a"])(N, M, D, !1, null, null, null), R = U.exports, L = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "container-fluid user-box"}, [s("router-link", {attrs: {to: "/upload/avatar"}}, [t.self.avatar ? s("img", {
                     staticClass: "img-thumbnail avatar",
                     attrs: {src: t.self.avatar}
-                }) : r("img", {
+                }) : s("img", {
                     staticClass: "img-thumbnail avatar",
                     attrs: {src: a("dc3a")}
-                })]), r("div", {staticClass: "info"}, [r("h5", [t._v("个人资料")]), r("table", {staticClass: "table"}, [r("tbody", [r("tr", [r("th", {attrs: {width: "35%"}}, [t._v("昵称")]), r("td", [t._v(t._s(t.self.nickname))])]), r("tr", [r("th", [t._v("手机")]), r("td", [t._v(t._s(t.self.phonenum))])]), r("tr", [r("th", [t._v("性别")]), r("td", [t._v(t._s("male" == t.self.gender ? "男" : "女"))])]), r("tr", [r("th", [t._v("生日")]), r("td", [t._v(t._s(t.self.birthday))])]), r("tr", [r("th", [t._v("地区")]), r("td", [t._v(t._s(t.self.location))])])])])]), t.profile_btn ? r("div", [r("button", {
-                    staticClass: "btn btn-success col-10",
+                })]), s("div", {staticClass: "info"}, [s("h5", [t._v("个人资料")]), s("table", {staticClass: "table"}, [s("tbody", [s("tr", [s("th", [t._v("昵称")]), s("td", [t._v(t._s(t.self.nickname))])]), s("tr", [s("th", [t._v("手机")]), s("td", [t._v(t._s(t.self.phonenum))])]), s("tr", [s("th", [t._v("性别")]), s("td", [t._v(t._s("male" == t.self.gender ? "男" : "女"))])]), s("tr", [s("th", [t._v("生日")]), s("td", [t._v(t._s(t.self.birthday))])]), s("tr", [s("th", [t._v("地区")]), s("td", [t._v(t._s(t.self.location))])])])])]), t.profile_btn ? s("div", [s("button", {
+                    staticClass: "btn btn-success col-10 btn-txt",
                     on: {
                         click: function (e) {
                             return t.show_more()
                         }
                     }
-                }, [t._v("查看更多")])]) : r("div", {staticClass: "info"}, [r("h5", [t._v("交友资料")]), r("table", {staticClass: "table"}, [r("tbody", [r("tr", [r("th", {attrs: {width: "35%"}}, [t._v("交友性别")]), r("td", [t._v(t._s("male" == t.self.profile.dating_gender ? "小哥哥" : "小姐姐"))])]), r("tr", [r("th", [t._v("交友城市")]), r("td", [t._v(t._s(t.self.profile.dating_location))])]), r("tr", [r("th", [t._v("最大年龄")]), r("td", [t._v(t._s(t.self.profile.max_dating_age) + " 岁")])]), r("tr", [r("th", [t._v("最小年龄")]), r("td", [t._v(t._s(t.self.profile.min_dating_age) + " 岁")])]), r("tr", [r("th", [t._v("最大距离")]), r("td", [t._v(t._s(t.self.profile.max_distance) + " 公里")])]), r("tr", [r("th", [t._v("最小距离")]), r("td", [t._v(t._s(t.self.profile.min_distance) + " 公里")])]), r("tr", [r("th", [t._v("自动播放")]), r("td", [t._v(t._s(t.self.profile.auto_play ? "是" : "否"))])]), r("tr"), r("tr", [r("th", [t._v("资料保密")]), r("td", [t._v(t._s(t.self.profile.only_matche ? "是" : "否"))])]), r("tr", [r("th", [t._v("开启震动")]), r("td", [t._v(t._s(t.self.profile.vibration ? "是" : "否"))])])])])]), r("br"), t.profile_btn ? t._e() : r("router-link", {
-                    staticClass: "btn btn-primary col-10",
+                }, [t._v("查看更多")])]) : s("div", {staticClass: "info"}, [s("h5", [t._v("交友资料")]), s("table", {staticClass: "table"}, [s("tbody", [s("tr", [s("th", [t._v("交友性别")]), s("td", [t._v(t._s("male" == t.self.profile.dating_gender ? "小哥哥" : "小姐姐"))])]), s("tr", [s("th", [t._v("交友城市")]), s("td", [t._v(t._s(t.self.profile.dating_location))])]), s("tr", [s("th", [t._v("最大年龄")]), s("td", [t._v(t._s(t.self.profile.max_dating_age) + " 岁")])]), s("tr", [s("th", [t._v("最小年龄")]), s("td", [t._v(t._s(t.self.profile.min_dating_age) + " 岁")])]), s("tr", [s("th", [t._v("最大距离")]), s("td", [t._v(t._s(t.self.profile.max_distance) + " 公里")])]), s("tr", [s("th", [t._v("最小距离")]), s("td", [t._v(t._s(t.self.profile.min_distance) + " 公里")])]), s("tr", [s("th", [t._v("自动播放")]), s("td", [t._v(t._s(t.self.profile.auto_play ? "是" : "否"))])]), s("tr"), s("tr", [s("th", [t._v("资料保密")]), s("td", [t._v(t._s(t.self.profile.only_matched ? "是" : "否"))])]), s("tr", [s("th", [t._v("开启震动")]), s("td", [t._v(t._s(t.self.profile.vibration ? "是" : "否"))])])])])]), t.profile_btn ? t._e() : s("router-link", {
+                    staticClass: "btn btn-primary col-10 btn-txt",
                     attrs: {to: "/user/update"}
                 }, [t._v("修改资料")])], 1)
-            }, B = [], I = {
+            }, I = [], S = {
                 name: "UserShow", props: ["self"], data: function () {
                     return {profile_btn: !0}
                 }, methods: {
                     show_more: function () {
                         var t = this;
-                        void 0 === this.self.profile.dating_gender && (console.log("从服务器获取 profile"), q["a"].get("/api/user/profile/show").then((function (e) {
+                        void 0 === this.self.profile.dating_gender && (console.log("从服务器获取 profile"), E["a"].get("/api/user/profile/show").then((function (e) {
                             var a = new k(e.data.data);
                             t.self.set_profile(a)
                         }))), this.profile_btn = !1
                     }
                 }
-            }, K = I, S = (a("c289"), Object(u["a"])(K, L, B, !1, null, "2564b3ed", null)), W = S.exports, F = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "container-fluid box"}, [r("form", {staticClass: "form-horizontal"}, [r("router-link", {attrs: {to: "/upload/avatar"}}, [t.user.avatar ? r("img", {
+            }, B = S, K = Object(u["a"])(B, L, I, !1, null, null, null), W = K.exports, F = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "container-fluid user-box"}, [s("form", {staticClass: "form-horizontal"}, [s("router-link", {attrs: {to: "/upload/avatar"}}, [t.user.avatar ? s("img", {
                     staticClass: "img-thumbnail avatar",
                     attrs: {src: t.user.avatar}
-                }) : r("img", {
+                }) : s("img", {
                     staticClass: "img-thumbnail avatar",
                     attrs: {src: a("dc3a")}
-                })]), r("div", {staticClass: "info"}, [r("h5", [t._v("基本资料")]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("昵称")]), r("div", {staticClass: "inputer"}, [r("input", {
+                })]), s("div", {staticClass: "info"}, [s("h5", [t._v("基本资料")]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("昵称")]), s("div", {staticClass: "inputer"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -371,18 +354,7 @@
                             e.target.composing || t.$set(t.user, "nickname", e.target.value)
                         }
                     }
-                })])]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("手机")]), r("div", {staticClass: "inputer"}, [r("input", {
-                    directives: [{
-                        name: "model",
-                        rawName: "v-model",
-                        value: t.user.phonenum,
-                        expression: "user.phonenum"
-                    }], staticClass: "form-control", domProps: {value: t.user.phonenum}, on: {
-                        input: function (e) {
-                            e.target.composing || t.$set(t.user, "phonenum", e.target.value)
-                        }
-                    }
-                })])]), r("fieldset", {staticClass: "form-group"}, [r("div", {staticClass: "row"}, [r("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("性别")]), r("div", {staticClass: "form-check radio-edge"}, [r("input", {
+                })])]), s("fieldset", {staticClass: "form-group"}, [s("div", {staticClass: "row"}, [s("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("性别")]), s("div", {staticClass: "form-check radio-edge"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -397,7 +369,7 @@
                             return t.$set(t.user, "gender", "male")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("小哥哥")])]), r("div", {staticClass: "form-check"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("小哥哥")])]), s("div", {staticClass: "form-check"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -412,7 +384,7 @@
                             return t.$set(t.user, "gender", "female")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("小姐姐")])])])]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("生日")]), r("div", {staticClass: "inputer"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("小姐姐")])])])]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("生日")]), s("div", {staticClass: "inputer"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -427,7 +399,7 @@
                             e.target.composing || t.$set(t.user, "birthday", e.target.value)
                         }
                     }
-                })])]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("地区")]), r("select", {
+                })])]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("地区")]), s("select", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -445,8 +417,8 @@
                         }
                     }
                 }, t._l(t.citys, (function (e) {
-                    return r("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
-                })), 0)])]), r("div", {staticClass: "info"}, [r("h5", [t._v("其他设置")]), r("fieldset", {staticClass: "form-group"}, [r("div", {staticClass: "row"}, [r("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("交友性别")]), r("div", {staticClass: "form-check radio-edge"}, [r("input", {
+                    return s("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
+                })), 0)])]), s("div", {staticClass: "info"}, [s("h5", [t._v("其他设置")]), s("fieldset", {staticClass: "form-group"}, [s("div", {staticClass: "row"}, [s("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("交友性别")]), s("div", {staticClass: "form-check radio-edge"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -461,7 +433,7 @@
                             return t.$set(t.user.profile, "dating_gender", "male")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("小哥哥")])]), r("div", {staticClass: "form-check"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("小哥哥")])]), s("div", {staticClass: "form-check"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -476,7 +448,7 @@
                             return t.$set(t.user.profile, "dating_gender", "female")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("小姐姐")])])])]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("交友城市")]), r("select", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("小姐姐")])])])]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("交友城市")]), s("select", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -494,8 +466,8 @@
                         }
                     }
                 }, t._l(t.citys, (function (e) {
-                    return r("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
-                })), 0)]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最大年龄")]), r("select", {
+                    return s("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
+                })), 0)]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最大年龄")]), s("select", {
                     directives: [{
                         name: "model",
                         rawName: "v-model.number",
@@ -514,8 +486,8 @@
                         }
                     }
                 }, t._l(t.ages, (function (e) {
-                    return r("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
-                })), 0)]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最小年龄")]), r("select", {
+                    return s("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
+                })), 0)]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最小年龄")]), s("select", {
                     directives: [{
                         name: "model",
                         rawName: "v-model.number",
@@ -534,8 +506,8 @@
                         }
                     }
                 }, t._l(t.ages, (function (e) {
-                    return r("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
-                })), 0)]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最大距离")]), r("select", {
+                    return s("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
+                })), 0)]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最大距离")]), s("select", {
                     directives: [{
                         name: "model",
                         rawName: "v-model.number",
@@ -554,8 +526,8 @@
                         }
                     }
                 }, t._l(t.range, (function (e) {
-                    return r("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
-                })), 0)]), r("div", {staticClass: "form-group row"}, [r("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最小距离")]), r("select", {
+                    return s("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
+                })), 0)]), s("div", {staticClass: "form-group row"}, [s("label", {staticClass: "col-sm-3 col-form-label lable"}, [t._v("最小距离")]), s("select", {
                     directives: [{
                         name: "model",
                         rawName: "v-model.number",
@@ -574,8 +546,8 @@
                         }
                     }
                 }, t._l(t.range, (function (e) {
-                    return r("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
-                })), 0)]), r("fieldset", {staticClass: "form-group"}, [r("div", {staticClass: "row"}, [r("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("自动播放")]), r("div", {staticClass: "form-check radio-edge"}, [r("input", {
+                    return s("option", {key: e, domProps: {value: e}}, [t._v(t._s(e))])
+                })), 0)]), s("fieldset", {staticClass: "form-group"}, [s("div", {staticClass: "row"}, [s("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("自动播放")]), s("div", {staticClass: "form-check radio-edge"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -590,7 +562,7 @@
                             return t.$set(t.user.profile, "auto_play", "true")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("开")])]), r("div", {staticClass: "form-check"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("开")])]), s("div", {staticClass: "form-check"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -605,37 +577,37 @@
                             return t.$set(t.user.profile, "auto_play", "false")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("关")])])])]), r("fieldset", {staticClass: "form-group"}, [r("div", {staticClass: "row"}, [r("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("资料保密")]), r("div", {staticClass: "form-check radio-edge"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("关")])])])]), s("fieldset", {staticClass: "form-group"}, [s("div", {staticClass: "row"}, [s("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("资料保密")]), s("div", {staticClass: "form-check radio-edge"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
-                        value: t.user.profile.only_matche,
-                        expression: "user.profile.only_matche"
+                        value: t.user.profile.only_matched,
+                        expression: "user.profile.only_matched"
                     }],
                     staticClass: "form-check-input",
                     attrs: {type: "radio", value: "true"},
-                    domProps: {checked: t._q(t.user.profile.only_matche, "true")},
+                    domProps: {checked: t._q(t.user.profile.only_matched, "true")},
                     on: {
                         change: function (e) {
-                            return t.$set(t.user.profile, "only_matche", "true")
+                            return t.$set(t.user.profile, "only_matched", "true")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("开")])]), r("div", {staticClass: "form-check"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("开")])]), s("div", {staticClass: "form-check"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
-                        value: t.user.profile.only_matche,
-                        expression: "user.profile.only_matche"
+                        value: t.user.profile.only_matched,
+                        expression: "user.profile.only_matched"
                     }],
                     staticClass: "form-check-input",
                     attrs: {type: "radio", value: "false"},
-                    domProps: {checked: t._q(t.user.profile.only_matche, "false")},
+                    domProps: {checked: t._q(t.user.profile.only_matched, "false")},
                     on: {
                         change: function (e) {
-                            return t.$set(t.user.profile, "only_matche", "false")
+                            return t.$set(t.user.profile, "only_matched", "false")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("关")])])])]), r("fieldset", {staticClass: "form-group"}, [r("div", {staticClass: "row"}, [r("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("开启震动")]), r("div", {staticClass: "form-check radio-edge"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("关")])])])]), s("fieldset", {staticClass: "form-group"}, [s("div", {staticClass: "row"}, [s("legend", {staticClass: "col-form-label col-sm pt-0 lable"}, [t._v("开启震动")]), s("div", {staticClass: "form-check radio-edge"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -650,7 +622,7 @@
                             return t.$set(t.user.profile, "vibration", "true")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("开")])]), r("div", {staticClass: "form-check"}, [r("input", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("开")])]), s("div", {staticClass: "form-check"}, [s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -665,7 +637,7 @@
                             return t.$set(t.user.profile, "vibration", "false")
                         }
                     }
-                }), r("label", {staticClass: "form-check-label"}, [t._v("关")])])])])])], 1), r("button", {
+                }), s("label", {staticClass: "form-check-label"}, [t._v("关")])])])])])], 1), s("button", {
                     staticClass: "btn btn-primary col-10",
                     on: {
                         click: function (e) {
@@ -673,40 +645,58 @@
                         }
                     }
                 }, [t._v("保存修改")])])
-            }, z = [], J = a("c550"), G = J["a"], H = (a("73ef"), Object(u["a"])(G, F, z, !1, null, "f04ca696", null)),
+            }, z = [], J = a("c550"), G = J["a"], H = (a("5254"), Object(u["a"])(G, F, z, !1, null, "3861714b", null)),
             Q = H.exports, V = function () {
                 var t = this, e = t.$createElement, a = t._self._c || e;
-                return a("div", {staticClass: "container-fluid box"}, [a("div", {staticClass: "form-horizontal"}, [a("h5", [t._v("上传您的个人形象")]), a("hr"), a("div", {staticClass: "form-group bottom-holder"}, [a("input", {
-                    attrs: {type: "file"},
-                    on: {
+                return a("div", {staticClass: "container-fluid upload-box"}, [a("div", {staticClass: "form-horizontal"}, [a("h5", [t._v("上传您的个人形象")]), a("hr"), a("div", {staticClass: "form-group"}, [a("input", {
+                    attrs: {
+                        type: "file",
+                        accept: "image/*"
+                    }, on: {
                         change: function (e) {
                             return t.handle_file(e.target.files)
                         }
                     }
                 })]), a("button", {
-                    staticClass: "btn btn-primary col-12", on: {
+                    staticClass: "btn btn-primary col-12 btn-txt", on: {
                         click: function (e) {
-                            return t.upload()
+                            return t.upload_avatar()
                         }
                     }
                 }, [t._v("点击提交")])])])
-            }, X = [], Y = {
+            }, X = [], Y = (a("b0c0"), a("cea2")), Z = {
                 name: "UploadAvatar", data: function () {
                     return {file: void 0}
                 }, methods: {
                     handle_file: function (t) {
-                        this.file = t[0]
-                    }, upload: function () {
-                        var t = this, e = new FormData;
-                        e.append("avatar", this.file), q["a"].post("/api/user/upload_avatar", e, {headers: {"Content-Type": "multipart/form-data"}}).then((function (e) {
-                            console.log("上传成功"), t.$store.state.self.avatar = e.data.data.avatar_url
-                        })), this.$router.push("/user/show")
+                        this.file = t[0], console.log("选中文件:\n", this.file)
+                    }, upload_avatar: function () {
+                        var t = this;
+                        E["a"].get("/qiniu/token").then((function (e) {
+                            if (0 === e.data.code) {
+                                var a = e.data.data.key, s = e.data.data.token;
+                                t.upload_to_qn(a, s)
+                            }
+                        }))
+                    }, upload_to_qn: function (t, e) {
+                        var a = this,
+                            s = {fname: this.file.name, params: {}, mimeType: ["image/png", "image/jpeg", "image/gif"]},
+                            r = {useCdnDomain: !1, region: Y["region"].z0, retryCount: 1}, n = {
+                                next: function (t) {
+                                    console.log("上传进度: ".concat(t.total.percent))
+                                }, error: function (t) {
+                                    console.log(t)
+                                }, complete: function (t) {
+                                    console.log("上传成功"), a.$store.state.self.avatar = t.data, a.$router.push("/user/show")
+                                }
+                            }, i = Y["upload"](this.file, t, e, s, r);
+                        i.subscribe(n)
                     }
                 }
-            }, Z = Y, tt = (a("9924"), Object(u["a"])(Z, V, X, !1, null, "7f79450a", null)), et = tt.exports,
-            at = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "vue-tinder"}, [t.queue.length > 0 ? r("Tinder", {
+            }, tt = Z, et = (a("7781"), Object(u["a"])(tt, V, X, !1, null, "43888756", null)), at = et.exports,
+            st = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return t.queue.length > 0 ? s("div", {staticClass: "vue-tinder"}, [s("Tinder", {
                     ref: "tinder",
                     attrs: {"key-name": "id", queue: t.queue, "offset-y": 15},
                     on: {
@@ -716,61 +706,61 @@
                     },
                     scopedSlots: t._u([{
                         key: "default", fn: function (e) {
-                            return [r("div", {
+                            return [s("div", {
                                 staticClass: "pic",
                                 style: {"background-image": "url(" + e.data.avatar + ")"},
                                 on: {click: t.show_stanger}
                             })]
                         }
-                    }], null, !1, 703924600)
-                }, [r("img", {
+                    }], null, !1, 913120244)
+                }, [s("img", {
                     staticClass: "like-pointer",
                     attrs: {slot: "like", src: a("d8ed")},
                     slot: "like"
-                }), r("img", {
+                }), s("img", {
                     staticClass: "nope-pointer",
                     attrs: {slot: "nope", src: a("77e1")},
                     slot: "nope"
-                }), r("img", {
+                }), s("img", {
                     staticClass: "super-pointer",
                     attrs: {slot: "super", src: a("0f4a")},
                     slot: "super"
-                }), r("img", {
+                }), s("img", {
                     staticClass: "rewind-pointer",
                     attrs: {slot: "rewind", src: a("408e")},
                     slot: "rewind"
-                })]) : r("div", {
-                    staticClass: "alert alert-primary notice",
-                    attrs: {role: "alert"}
-                }, [r("strong", [t._v("您的眼光太高了，满足条件的都被您滑完了！")]), r("br"), r("br"), r("span", [t._v("适当调整交友资料可以认识更多有趣的人哦！")])]), r("div", {staticClass: "btns"}, [r("img", {
+                })]), s("div", {staticClass: "swipe-btns"}, [s("img", {
                     attrs: {src: a("340d")},
                     on: {
                         click: function (e) {
                             return t.decide("rewind")
                         }
                     }
-                }), r("img", {
+                }), s("img", {
                     attrs: {src: a("1784")}, on: {
                         click: function (e) {
                             return t.decide("nope")
                         }
                     }
-                }), r("img", {
+                }), s("img", {
                     attrs: {src: a("6000")}, on: {
                         click: function (e) {
                             return t.decide("super")
                         }
                     }
-                }), r("img", {
+                }), s("img", {
                     attrs: {src: a("ef74")}, on: {
                         click: function (e) {
                             return t.decide("like")
                         }
                     }
-                })])], 1)
-            }, rt = [], st = (a("4160"), a("caad"), a("c975"), a("d81d"), a("159b"), a("96cf"), a("1da1")),
-            nt = a("0d28"), it = a.n(nt), ot = {
-                name: "Swiper", components: {Tinder: it.a}, data: function () {
+                })])], 1) : s("div", {
+                    staticClass: "alert alert-primary notice",
+                    attrs: {role: "alert"}
+                }, [s("strong", [t._v("亲，您的眼光太高，满足条件的都被您滑完了！")]), s("br"), s("br"), s("span", [t._v("适当调整交友资料可以认识更多有趣的人哦！")])])
+            }, rt = [], nt = (a("4160"), a("caad"), a("c975"), a("d81d"), a("159b"), a("96cf"), a("1da1")),
+            it = a("0d28"), ot = a.n(it), lt = {
+                name: "Swiper", components: {Tinder: ot.a}, data: function () {
                     return {queue: this.$store.state.queue, offset: 0, history: []}
                 }, created: function () {
                     this.queue.length <= 5 && this.fetch_data()
@@ -779,7 +769,7 @@
                         this.$router.push({name: "stanger", params: {stanger: this.queue[0]}})
                     }, fetch_data: function () {
                         var t = this;
-                        q["a"].get("/api/social/rcmd_users").then((function (e) {
+                        E["a"].get("/api/social/rcmd").then((function (e) {
                             if (0 == e.data.code) {
                                 var a = t.queue.map((function (t) {
                                     return t.id
@@ -790,11 +780,11 @@
                             } else console.log("获取数据失败: ".concat(e.data.data))
                         }))
                     }, on_submit: function (t) {
-                        var e = t.type, a = t.key, r = t.item;
-                        this.swipe(e, a), this.queue.length < 5 && this.fetch_data(), this.history.push(r)
+                        var e = t.type, a = t.key, s = t.item;
+                        this.swipe(e, a), this.queue.length < 5 && this.fetch_data(), this.history.push(s)
                     }, decide: function (t) {
                         var e = this;
-                        return Object(st["a"])(regeneratorRuntime.mark((function a() {
+                        return Object(nt["a"])(regeneratorRuntime.mark((function a() {
                             return regeneratorRuntime.wrap((function (a) {
                                 while (1) switch (a.prev = a.next) {
                                     case 0:
@@ -806,92 +796,94 @@
                             }), a)
                         })))()
                     }, swipe: function (t, e) {
-                        var a = this, r = {nope: "dislike", like: "like", super: "superlike"};
+                        var a = this, s = {nope: "dislike", like: "like", super: "superlike"};
                         console.log(t, e);
-                        var s = "/api/social/".concat(r[t]);
-                        q["a"].post(s, {sid: e}).then((function (r) {
-                            0 === r.data.code ? ["like", "super"].includes(t) && r.data.data.is_matched && alert("恭喜，匹配成功！！！") : 1006 === r.data.code ? console.log("重复滑动: ".concat(e)) : (console.log(r.data.data), a.$refs.tinder.rewind([a.history.pop()]))
+                        var r = "/api/social/".concat(s[t]);
+                        E["a"].post(r, {sid: e}).then((function (s) {
+                            0 === s.data.code ? ["like", "super"].includes(t) && s.data.data.is_matched && alert("恭喜，匹配成功！！！") : 1006 === s.data.code ? console.log("重复滑动: ".concat(e)) : a.$refs.tinder.rewind([a.history.pop()])
                         }))
                     }, rewind: function () {
                         var t = this;
-                        this.history.length ? q["a"].post("/api/social/rewind").then((function (e) {
-                            0 === e.data.code ? t.$refs.tinder.rewind([t.history.pop()]) : alert(e.data.data)
+                        this.history.length ? E["a"].post("/api/social/rewind").then((function (e) {
+                            0 === e.data.code && t.$refs.tinder.rewind([t.history.pop()])
                         })) : alert("您还没有滑过任何人")
                     }
                 }
-            }, lt = ot, ct = (a("447c"), Object(u["a"])(lt, at, rt, !1, null, null, null)), ut = ct.exports,
-            dt = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "container-fluid box"}, [t.stanger.avatar ? r("img", {
+            }, ct = lt, ut = (a("447c"), Object(u["a"])(ct, st, rt, !1, null, null, null)), dt = ut.exports,
+            pt = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "container-fluid user-box"}, [t.stanger.avatar ? s("img", {
                     staticClass: "img-thumbnail avatar",
                     attrs: {src: t.stanger.avatar}
-                }) : t._e(), r("div", {staticClass: "info"}, [r("h5", [t._v("个人资料")]), r("table", {staticClass: "table"}, [r("tbody", [r("tr", [r("th", {attrs: {width: "35%"}}, [t._v("昵称")]), r("td", [t._v(t._s(t.stanger.nickname))])]), r("tr", [r("th", [t._v("性别")]), r("td", [t._v(t._s("male" == t.stanger.gender ? "小哥哥" : "小姐姐"))])]), t.stanger.birthday ? r("tr", [r("th", [t._v("生日")]), r("td", [t._v(t._s(t.stanger.birthday))])]) : t._e(), t.stanger.location ? r("tr", [r("th", [t._v("地区")]), r("td", [t._v(t._s(t.stanger.location))])]) : t._e()])])]), r("button", {
+                }) : t._e(), s("div", {staticClass: "info"}, [s("h5", [t._v("个人资料")]), s("table", {staticClass: "table"}, [s("tbody", [s("tr", [s("th", [t._v("昵称")]), s("td", [t._v(t._s(t.stanger.nickname))])]), s("tr", [s("th", [t._v("性别")]), s("td", [t._v(t._s("male" == t.stanger.gender ? "小哥哥" : "小姐姐"))])]), t.stanger.birthday ? s("tr", [s("th", [t._v("生日")]), s("td", [t._v(t._s(t.stanger.birthday))])]) : t._e(), t.stanger.location ? s("tr", [s("th", [t._v("地区")]), s("td", [t._v(t._s(t.stanger.location))])]) : t._e()])])]), s("button", {
                     staticClass: "btn btn-success col-10 btn-txt",
                     on: {
                         click: function (e) {
                             return t.$router.back()
                         }
                     }
-                }, [r("img", {attrs: {src: a("863a"), width: "10px"}}), t._v(" 返 回 ")])])
-            }, pt = [], ft = {name: "StangerShow", props: ["stanger"]}, mt = ft,
-            _t = (a("2e02"), Object(u["a"])(mt, dt, pt, !1, null, "2cadeccc", null)), vt = _t.exports,
-            ht = function () {
+                }, [s("img", {attrs: {src: a("863a"), width: "10px"}}), t._v(" 返 回 ")])])
+            }, ft = [], _t = {name: "StangerShow", props: ["stanger"]}, mt = _t,
+            vt = Object(u["a"])(mt, pt, ft, !1, null, null, null), ht = vt.exports, gt = function () {
                 var t = this, e = t.$createElement, a = t._self._c || e;
-                return a("div", {staticClass: "list-group"}, t._l(t.friends, (function (e) {
+                return t.friends.length > 0 ? a("div", {staticClass: "list-group"}, t._l(t.friends, (function (e) {
                     return a("router-link", {
                         key: e.id,
-                        staticClass: "list-group-item list-group-item-action item",
+                        staticClass: "list-group-item list-group-item-action list-item",
                         attrs: {to: {name: "friend", params: {friend: e}}}
                     }, [a("img", {
                         staticClass: "icon navbar-brand",
                         attrs: {src: e.avatar}
-                    }), a("span", {staticClass: "item-text"}, [t._v(t._s(e.nickname))])])
-                })), 1)
-            }, gt = [], bt = {
+                    }), a("span", {staticClass: "item-text"}, [t._v(t._s(e.nickname))]), a("span", {staticClass: "item-text"}, [t._v("@")]), a("span", {staticClass: "item-text"}, [t._v(t._s(e.location))])])
+                })), 1) : a("div", {
+                    staticClass: "alert alert-warning notice",
+                    attrs: {role: "alert"}
+                }, [a("strong", [t._v("您暂时没有好友")]), a("br"), a("br"), t._m(0)])
+            }, bt = [function () {
+                var t = this, e = t.$createElement, a = t._self._c || e;
+                return a("span", [t._v(" 互相喜欢的人，才能成为好朋友！ "), a("br"), t._v(" 加油让自己变得更受欢迎！！ ")])
+            }], Ct = {
                 name: "Friends", data: function () {
                     return {friends: []}
                 }, created: function () {
                     var t = this;
-                    q["a"].get("/api/social/friend_list").then((function (e) {
+                    E["a"].get("/api/social/friends").then((function (e) {
                         0 === e.data.code && (t.friends = e.data.data)
                     }))
                 }
-            }, Ct = bt, kt = (a("1b81"), Object(u["a"])(Ct, ht, gt, !1, null, "f3835d4a", null)), wt = kt.exports,
-            yt = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "container-fluid box"}, [t.friend.avatar ? r("img", {
+            }, kt = Ct, wt = Object(u["a"])(kt, gt, bt, !1, null, null, null), yt = wt.exports, xt = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return s("div", {staticClass: "container-fluid user-box"}, [t.friend.avatar ? s("img", {
                     staticClass: "img-thumbnail avatar",
                     attrs: {src: t.friend.avatar}
-                }) : t._e(), r("div", {staticClass: "info"}, [r("h5", [t._v("个人资料")]), r("table", {staticClass: "table"}, [r("tbody", [r("tr", [r("th", {attrs: {width: "35%"}}, [t._v("昵称")]), r("td", [t._v(t._s(t.friend.nickname))])]), r("tr", [r("th", [t._v("性别")]), r("td", [t._v(t._s("male" == t.friend.gender ? "小哥哥" : "小姐姐"))])]), r("tr", [r("th", [t._v("生日")]), r("td", [t._v(t._s(t.friend.birthday))])]), r("tr", [r("th", [t._v("地区")]), r("td", [t._v(t._s(t.friend.location))])])])])]), r("button", {
+                }) : t._e(), s("div", {staticClass: "info"}, [s("h5", [t._v("个人资料")]), s("table", {staticClass: "table"}, [s("tbody", [s("tr", [s("th", [t._v("昵称")]), s("td", [t._v(t._s(t.friend.nickname))])]), s("tr", [s("th", [t._v("性别")]), s("td", [t._v(t._s("male" == t.friend.gender ? "小哥哥" : "小姐姐"))])]), s("tr", [s("th", [t._v("生日")]), s("td", [t._v(t._s(t.friend.birthday))])]), s("tr", [s("th", [t._v("地区")]), s("td", [t._v(t._s(t.friend.location))])])])])]), s("button", {
                     staticClass: "btn btn-success col-10 btn-txt",
                     on: {
                         click: function (e) {
                             return t.$router.back()
                         }
                     }
-                }, [r("img", {
+                }, [s("img", {
                     attrs: {
                         src: a("863a"),
                         width: "10px"
                     }
-                }), t._v(" 返 回 ")]), r("button", {
-                    staticClass: "btn btn-danger col-10 btn-txt",
-                    on: {
+                }), t._v(" 返 回 ")]), s("button", {
+                    staticClass: "btn btn-danger col-10 btn-txt", on: {
                         click: function (e) {
                             return t.break_off()
                         }
                     }
-                }, [r("img", {attrs: {src: a("1d45"), width: "10px"}}), t._v(" 删除好友 ")])])
-            }, xt = [], Ot = {
+                }, [s("img", {attrs: {src: a("1d45"), width: "10px"}}), t._v(" 删除好友 ")])])
+            }, Ot = [], qt = {
                 name: "FriendShow", props: ["friend"], methods: {
                     break_off: function () {
                         alert("敢删我好友！胆肥啦 ？！！")
                     }
                 }
-            }, Et = Ot, qt = (a("3646"), Object(u["a"])(Et, yt, xt, !1, null, "23b09b47", null)), $t = qt.exports,
-            Pt = function () {
-                var t = this, e = t.$createElement, r = t._self._c || e;
-                return r("div", {staticClass: "vue-tinder"}, [t.queue.length > 0 ? r("Tinder", {
+            }, Et = qt, $t = Object(u["a"])(Et, xt, Ot, !1, null, null, null), Pt = $t.exports, jt = function () {
+                var t = this, e = t.$createElement, s = t._self._c || e;
+                return t.queue.length > 0 ? s("div", {staticClass: "vue-tinder"}, [s("Tinder", {
                     ref: "tinder",
                     attrs: {"key-name": "id", queue: t.queue, "offset-y": 15},
                     on: {
@@ -901,70 +893,69 @@
                     },
                     scopedSlots: t._u([{
                         key: "default", fn: function (e) {
-                            return [r("div", {
+                            return [s("div", {
                                 staticClass: "pic",
                                 style: {"background-image": "url(" + e.data.avatar + ")"},
                                 on: {click: t.show_stanger}
                             })]
                         }
-                    }], null, !1, 703924600)
-                }, [r("img", {
+                    }], null, !1, 3795022264)
+                }, [s("img", {
                     staticClass: "like-pointer",
                     attrs: {slot: "like", src: a("d8ed")},
                     slot: "like"
-                }), r("img", {
+                }), s("img", {
                     staticClass: "nope-pointer",
                     attrs: {slot: "nope", src: a("77e1")},
                     slot: "nope"
-                }), r("img", {
+                }), s("img", {
                     staticClass: "super-pointer",
                     attrs: {slot: "super", src: a("0f4a")},
                     slot: "super"
-                }), r("img", {
+                }), s("img", {
                     staticClass: "rewind-pointer",
                     attrs: {slot: "rewind", src: a("408e")},
                     slot: "rewind"
-                })]) : r("div", {
-                    staticClass: "alert alert-primary notice",
-                    attrs: {role: "alert"}
-                }, [r("strong", [t._v("还没有人右滑过你")]), r("br"), r("br"), r("span", [t._v("听说上传的照片越漂亮，机会越大哦！")])]), r("div", {staticClass: "btns"}, [r("img", {
-                    attrs: {src: a("340d")},
-                    on: {
+                })]), s("div", {staticClass: "swipe-btns"}, [s("img", {
+                    attrs: {src: a("340d")}, on: {
                         click: function (e) {
                             return t.decide("rewind")
                         }
                     }
-                }), r("img", {
+                }), s("img", {
                     attrs: {src: a("1784")}, on: {
                         click: function (e) {
                             return t.decide("nope")
                         }
                     }
-                }), r("img", {
+                }), s("img", {
                     attrs: {src: a("6000")}, on: {
                         click: function (e) {
                             return t.decide("super")
                         }
                     }
-                }), r("img", {
+                }), s("img", {
                     attrs: {src: a("ef74")}, on: {
                         click: function (e) {
                             return t.decide("like")
                         }
                     }
-                })])], 1)
-            }, jt = [], At = {
-                name: "Fans", components: {Tinder: it.a}, data: function () {
+                })])], 1) : s("div", {
+                    staticClass: "alert alert-primary notice",
+                    attrs: {role: "alert"}
+                }, [s("strong", [t._v("您暂时没有粉丝")]), s("br"), s("br"), s("span", [t._v("听说上传的照片越漂亮，机会越大哦！")])])
+            }, At = [], Mt = {
+                name: "Fans", components: {Tinder: ot.a}, data: function () {
                     return {queue: [], offset: 0, history: []}
                 }, created: function () {
-                    this.queue.length <= 5 && this.fetch_data()
+                    this.fetch_data()
                 }, methods: {
                     show_stanger: function () {
                         this.$router.push({name: "stanger", params: {stanger: this.queue[0]}})
                     }, fetch_data: function () {
                         var t = this;
-                        q["a"].get("/api/social/who_liked_me").then((function (e) {
-                            if (0 == e.data.code) {
+                        E["a"].get("/api/social/fans").then((function (e) {
+                            if (0 === e.data.code) {
                                 var a = t.queue.map((function (t) {
                                     return t.id
                                 }));
@@ -974,11 +965,11 @@
                             } else console.log("获取数据失败: ".concat(e.data.data))
                         }))
                     }, on_submit: function (t) {
-                        var e = t.type, a = t.key, r = t.item;
-                        this.swipe(e, a), this.queue.length < 5 && this.fetch_data(), this.history.push(r)
+                        var e = t.type, a = t.key, s = t.item;
+                        this.swipe(e, a), this.queue.length < 5 && this.fetch_data(), this.history.push(s)
                     }, decide: function (t) {
                         var e = this;
-                        return Object(st["a"])(regeneratorRuntime.mark((function a() {
+                        return Object(nt["a"])(regeneratorRuntime.mark((function a() {
                             return regeneratorRuntime.wrap((function (a) {
                                 while (1) switch (a.prev = a.next) {
                                     case 0:
@@ -990,43 +981,45 @@
                             }), a)
                         })))()
                     }, swipe: function (t, e) {
-                        var a = this, r = {nope: "dislike", like: "like", super: "superlike"};
+                        var a = this, s = {nope: "dislike", like: "like", super: "superlike"};
                         console.log(t, e);
-                        var s = "/api/social/".concat(r[t]);
-                        q["a"].post(s, {sid: e}).then((function (r) {
-                            0 === r.data.code ? ["like", "super"].includes(t) && r.data.data.is_matched && console.log("恭喜，匹配成功！！！") : 1006 === r.data.code ? console.log("重复滑动: ".concat(e)) : (console.log(r.data.data), a.$refs.tinder.rewind([a.history.pop()]))
+                        var r = "/api/social/".concat(s[t]);
+                        E["a"].post(r, {sid: e}).then((function (s) {
+                            0 === s.data.code ? ["like", "super"].includes(t) && s.data.data.is_matched && alert("恭喜，匹配成功！！！") : 1006 === s.data.code ? console.log("重复滑动: ".concat(e)) : a.$refs.tinder.rewind([a.history.pop()])
                         }))
                     }, rewind: function () {
                         var t = this;
-                        this.history.length ? q["a"].post("/api/social/rewind").then((function (e) {
-                            0 === e.data.code ? t.$refs.tinder.rewind([t.history.pop()]) : alert(e.data.data)
+                        this.history.length ? E["a"].post("/api/social/rewind").then((function (e) {
+                            0 === e.data.code && t.$refs.tinder.rewind([t.history.pop()])
                         })) : alert("您还没有滑过任何人")
                     }
                 }
-            }, Mt = At, Dt = (a("906b"), Object(u["a"])(Mt, Pt, jt, !1, null, null, null)), Nt = Dt.exports,
-            Tt = function () {
+            }, Dt = Mt, Tt = Object(u["a"])(Dt, jt, At, !1, null, null, null), Nt = Tt.exports, Ut = function () {
                 var t = this, e = t.$createElement, a = t._self._c || e;
-                return a("div", {staticClass: "list-group"}, t._l(t.users, (function (e) {
+                return t.users.length > 0 ? a("div", {staticClass: "list-group"}, t._l(t.users, (function (e) {
                     return a("router-link", {
                         key: e.id,
-                        staticClass: "list-group-item list-group-item-action item",
+                        staticClass: "list-group-item list-group-item-action list-item",
                         attrs: {to: {name: "stanger", params: {stanger: e}}}
                     }, [a("span", {staticClass: "rank-txt"}, [t._v(t._s(e.rank) + ".")]), a("img", {
                         staticClass: "icon navbar-brand",
                         attrs: {src: e.avatar}
                     }), a("span", {staticClass: "item-txt"}, [t._v(t._s(e.nickname) + " / " + t._s(e.score) + " 分")])])
-                })), 1)
-            }, Ut = [], Rt = {
+                })), 1) : a("div", {
+                    staticClass: "alert alert-primary notice",
+                    attrs: {role: "alert"}
+                }, [a("strong", [t._v("暂无排名数据")])])
+            }, Rt = [], Lt = {
                 name: "Friends", data: function () {
                     return {users: []}
                 }, created: function () {
                     var t = this;
-                    q["a"].get("/api/social/hot_rank").then((function (e) {
+                    E["a"].get("/api/social/rank").then((function (e) {
                         0 === e.data.code && (t.users = e.data.data)
                     }))
                 }
-            }, Lt = Rt, Bt = (a("0658"), Object(u["a"])(Lt, Tt, Ut, !1, null, "713bc72e", null)), It = Bt.exports;
-        r["a"].use(x["a"]);
+            }, It = Lt, St = (a("df91"), Object(u["a"])(It, Ut, Rt, !1, null, "dae4a034", null)), Bt = St.exports;
+        s["a"].use(x["a"]);
         var Kt = new x["a"]({
             routes: [{
                 name: "home",
@@ -1049,25 +1042,25 @@
             }, {
                 name: "avatar",
                 path: "/upload/avatar",
-                component: et,
+                component: at,
                 props: !0,
                 meta: {requiresAuth: !0}
-            }, {name: "swiper", path: "/swiper", component: ut, props: !0, meta: {requiresAuth: !0}}, {
+            }, {name: "swiper", path: "/swiper", component: dt, props: !0, meta: {requiresAuth: !0}}, {
                 name: "stanger",
                 path: "/stanger/show",
-                component: vt,
+                component: ht,
                 props: !0,
                 meta: {requiresAuth: !0}
-            }, {name: "friends", path: "/friends", component: wt, props: !0, meta: {requiresAuth: !0}}, {
+            }, {name: "friends", path: "/friends", component: yt, props: !0, meta: {requiresAuth: !0}}, {
                 name: "friend",
                 path: "/friend/show",
-                component: $t,
+                component: Pt,
                 props: !0,
                 meta: {requiresAuth: !0}
             }, {name: "fans", path: "/fans", component: Nt, props: !0, meta: {requiresAuth: !0}}, {
                 name: "rank",
                 path: "/hot/rank",
-                component: It,
+                component: Bt,
                 props: !0,
                 meta: {requiresAuth: !0}
             }]
@@ -1077,9 +1070,9 @@
                 return t.meta.requiresAuth
             })) ? void 0 == y.state.self ? (console.log("尚未登录: ".concat(t.path, " => /login")), a({path: "/login"})) : (console.log("".concat(y.state.self.nickname, " => ").concat(t.path)), a()) : (console.log("无需登录 => ".concat(t.path)), a())
         }));
-        var St = Kt;
-        r["a"].config.productionTip = !1, new r["a"]({
-            store: y, router: St, render: function (t) {
+        var Wt = Kt;
+        s["a"].config.productionTip = !1, new s["a"]({
+            store: y, router: Wt, render: function (t) {
                 return t(v)
             }
         }).$mount("#app")
@@ -1091,58 +1084,52 @@
         t.exports = a.p + "img/user-a.338fa4af.svg"
     }, "67f9": function (t, e, a) {
         t.exports = a.p + "img/menu.45a830ba.svg"
-    }, "6d40": function (t, e, a) {
+    }, "69d1": function (t, e, a) {
+    }, 7781: function (t, e, a) {
         "use strict";
-        var r = a("7baa"), s = a.n(r);
-        s.a
-    }, "73ef": function (t, e, a) {
-        "use strict";
-        var r = a("878b"), s = a.n(r);
-        s.a
+        var s = a("c2ee"), r = a.n(s);
+        r.a
     }, "77e1": function (t, e, a) {
         t.exports = a.p + "img/nope-txt.3648f341.png"
     }, "790a": function (t, e, a) {
         t.exports = a.p + "img/fire.6458f000.svg"
-    }, "7baa": function (t, e, a) {
     }, "85ec": function (t, e, a) {
     }, "863a": function (t, e, a) {
         t.exports = a.p + "img/back-w.271d6a03.svg"
-    }, "878b": function (t, e, a) {
-    }, "906b": function (t, e, a) {
-        "use strict";
-        var r = a("4fa9"), s = a.n(r);
-        s.a
-    }, 9924: function (t, e, a) {
-        "use strict";
-        var r = a("5498"), s = a.n(r);
-        s.a
-    }, "9dcc": function (t, e, a) {
-    }, a057: function (t, e, a) {
-    }, a1d9: function (t, e, a) {
-        "use strict";
-        var r = a("9dcc"), s = a.n(r);
-        s.a
     }, b1d0: function (t, e, a) {
         "use strict";
-        a("99af");
-        var r = a("bc3a"), s = a.n(r), n = a("4328"), i = a.n(n);
-        s.a.defaults.withCredentials = !0;
-        var o = s.a.create({
+        var s = a("bc3a"), r = a.n(s), n = a("4328"), i = a.n(n);
+        r.a.defaults.withCredentials = !0;
+        var o = {
+            999: "服务器错误",
+            1e3: "验证码发送失败",
+            1001: "验证码错误",
+            1002: "您还没有登陆",
+            1003: "表单数据错误",
+            1004: "SID 错误",
+            1005: "滑动类型错误",
+            1006: "重复滑动",
+            1007: "反悔次数达到上限",
+            1008: "反悔超时",
+            1009: "当前还没有滑动记录",
+            1010: "您没有该功能权限"
+        }, l = r.a.create({
             withCredentials: !0,
             headers: {"Content-Type": "application/x-www-form-urlencoded"},
             transformRequest: [function (t) {
                 return t instanceof FormData || (t = i.a.stringify(t)), t
             }]
         });
-        o.interceptors.response.use((function (t) {
-            return 0 != t.data.code && alert("Error ".concat(t.data.code, "：").concat(t.data.data)), t
-        })), e["a"] = o
+        l.interceptors.response.use((function (t) {
+            if (0 != t.data.code) {
+                var e = o[t.data.code];
+                alert(e)
+            }
+            return t
+        })), e["a"] = l
     }, bdcd: function (t, e, a) {
         t.exports = a.p + "img/list.f585607d.svg"
-    }, c289: function (t, e, a) {
-        "use strict";
-        var r = a("3f11"), s = a.n(r);
-        s.a
+    }, c2ee: function (t, e, a) {
     }, c550: function (module, __webpack_exports__, __webpack_require__) {
         "use strict";
         var core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("d81d"),
@@ -1151,44 +1138,51 @@
             core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_1___default = __webpack_require__.n(core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_1__),
             core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("ddb0"),
             core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_2___default = __webpack_require__.n(core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_2__),
-            _Users_xu_work_frontend_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("2909"),
+            _Users_xu_Teaching_Lecture_swiper_frontend_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("2909"),
             _libs_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("b1d0");
         __webpack_exports__["a"] = {
             name: "UserUpdate", props: ["self"], data: function () {
                 return {
                     user: this.self.copy(),
                     citys: ["北京", "上海", "深圳", "武汉", "成都", "西安", "沈阳"],
-                    ages: Object(_Users_xu_work_frontend_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["a"])(Array(43).keys()).map((function (t) {
+                    ages: Object(_Users_xu_Teaching_Lecture_swiper_frontend_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["a"])(Array(43).keys()).map((function (t) {
                         return t + 18
                     })),
-                    range: Object(_Users_xu_work_frontend_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["a"])(Array(10).keys()).map((function (t) {
+                    range: Object(_Users_xu_Teaching_Lecture_swiper_frontend_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["a"])(Array(10).keys()).map((function (t) {
                         return t + 1
                     }))
                 }
             }, methods: {
                 submit: function submit() {
                     var _this = this;
-                    this.user.profile.auto_play = eval(this.user.profile.auto_play), this.user.profile.only_matche = eval(this.user.profile.only_matche), this.user.profile.vibration = eval(this.user.profile.vibration);
+                    this.user.profile.auto_play = eval(this.user.profile.auto_play), this.user.profile.only_matched = eval(this.user.profile.only_matched), this.user.profile.vibration = eval(this.user.profile.vibration);
                     var params = this.user.to_dict(), p_dict = this.user.profile.to_dict();
                     for (var k in p_dict) params[k] = p_dict[k];
-                    _libs_http__WEBPACK_IMPORTED_MODULE_4__["a"].post("/api/user/set_profile", params).then((function (t) {
+                    _libs_http__WEBPACK_IMPORTED_MODULE_4__["a"].post("/api/user/profile/update", params).then((function (t) {
                         0 === t.data.code && (_this.$store.state.self = _this.user, _this.$router.push("/user/show"))
                     }))
                 }
             }
         }
+    }, d306: function (t, e, a) {
     }, d8ed: function (t, e, a) {
         t.exports = a.p + "img/like-txt.52d704df.png"
     }, dbdc: function (t, e, a) {
         t.exports = a.p + "img/swiper.fc34a7aa.png"
     }, dc3a: function (t, e, a) {
         t.exports = a.p + "img/default.fd8c1f48.jpg"
+    }, df91: function (t, e, a) {
+        "use strict";
+        var s = a("69d1"), r = a.n(s);
+        r.a
+    }, e29d: function (t, e, a) {
     }, ef74: function (t, e, a) {
         t.exports = a.p + "img/like.a33bd5aa.png"
-    }, f7b9: function (t, e, a) {
+    }, f4e9: function (t, e, a) {
         "use strict";
-        var r = a("a057"), s = a.n(r);
-        s.a
+        var s = a("e29d"), r = a.n(s);
+        r.a
+    }, fce8: function (t, e, a) {
     }
 });
-//# sourceMappingURL=app.2e240822.js.map
+//# sourceMappingURL=app.bfef509f.js.map

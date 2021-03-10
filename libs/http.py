@@ -1,9 +1,10 @@
 import json
 
-from django.conf import settings
+
 from django.http import HttpResponse
 
-from common.stat_code import OK
+from MrRight import settings
+from common.state_code import OK
 
 
 def render_json(code=OK,data=None):

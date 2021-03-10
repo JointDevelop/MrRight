@@ -67,7 +67,4 @@ class Profile(models.Model):
             'vibration': self.vibration,
             'only_matched': self.only_matched,
             'auto_play': self.auto_play
-
-
-
         }

@@ -1,7 +1,7 @@
 from redis import Redis as _Redis
 from pickle import dumps, loads, UnpicklingError
 
-from common.config import REDIS
+from libs.config import REDIS
 
 
 class Redis(_Redis):

@@ -25,17 +25,20 @@ class ProfileForm(forms.ModelForm):
 
     def clean_max_distance(self):
         '''make sure max_distance is larger than min_distance'''
-        cleaned = super(ProfileForm, self).clean()
-        if cleaned['max_distance'] >= cleaned['min_distance']:
-            return cleaned['max_distance']
+        if not hasattr(self,'_auto_cleaned'):
+           self._auto_cleaned = super().clean()
+
+        if self._auto_cleaned['max_distance'] >= self._auto_cleaned['min_distance']:
+            return self._auto_cleaned['max_distance']
         else:
             raise forms.ValidationError('must make sure `max_distance` is larger than `min_distance`...')
 
     def clean_max_dating_age(self):
         '''make sure max_dating_age is larger than min_dating_age'''
-        cleaned = super(ProfileForm, self).clean()
-        if cleaned['max_dating_age'] >= cleaned['min_dating_age']:
-            return cleaned['max_dating_age']
+        if not hasattr(self,'_auto_cleaned'):
+           self._auto_cleaned = super().clean()
+        if self._auto_cleaned['max_dating_age'] >= self._auto_cleaned['min_dating_age']:
+            return self._auto_cleaned['max_dating_age']
         else:
             raise forms.ValidationError('must make sure `max_dating_age` is larger than `min_dating_age`...')
 

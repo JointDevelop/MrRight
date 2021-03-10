@@ -5,6 +5,7 @@ from common import keys
 from common import times
 from libs.cache import rds
 from libs.sms import send_sms
+from asyntasks import celery_app
 
 
 def create_vcode(length=6):
@@ -15,6 +16,8 @@ def create_vcode(length=6):
     return vcode
 
 
+@celery_app.task
+# @retry(XXX)  # when send_vcode is failed, we will retry it severial times
 def send_vcode(phone):
     '''
     call send_sms to send message to phone with vcode.
@@ -46,5 +49,5 @@ def send_vcode(phone):
 def gen_random_nickname(length=8):
     '''generate an random nickname'''
     nameRange = '1234567890'
-    nickname = ''.join(random.choices(nameRange,k=length))
+    nickname = ''.join(random.choices(nameRange, k=length))
     return nickname
