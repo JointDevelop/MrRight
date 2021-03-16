@@ -1,5 +1,6 @@
 from django.core.exceptions import ValidationError
 from common.keys import RCMD_QUE, REWIND_K
+from common.state_code import RewindLimit, RewindTimeout
 from user.models import User
 from user.models import Profile
 import datetime
@@ -119,15 +120,13 @@ def rewind_someone(uid):
     rewind_key = REWIND_K % (uid, now.date())
     rewind_count = rds.get(rewind_key, 0)
     if rewind_count >= 3:
-        # TODO: return state code 1007
-        pass
+        raise RewindLimit
     # find latest swipe
     latest_swipe = Swiped.objects.filter(uid=uid).latest('stime')
     # check this swipe happend within 5 mins or not
     time_past = now - latest_swipe.stime
     if time_past.seconds >= 5 * 60:
-        # TODO: return state code 1008
-        pass
+        raise RewindTimeout
     # make it be a transaction
     with atomic():
         # if latest swipe cause 'you are frineds', you have to retrive this friendship

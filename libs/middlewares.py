@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.utils.deprecation import MiddlewareMixin
 
 from MrRight.settings import STATIC_URL
-from common.state_code import LOGIN_REQUIRED
+from common.state_code import LOGIN_REQUIRED, LogicErr
 from libs.http import render_json
 
 
@@ -30,3 +30,10 @@ class CheckLoginMiddleware(MiddlewareMixin):
             return
         else:
             return render_json(code=LOGIN_REQUIRED,data=None)
+
+
+class LogicErrorMiddleware(MiddlewareMixin):
+    def process_exception(self,request,excp):
+        if isinstance(excp,LogicErr):
+            return render_json(code=excp.code)
+

@@ -51,7 +51,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'libs.middlewares.CheckLoginMiddleware'
+    'libs.middlewares.CheckLoginMiddleware',
+    'libs.middlewares.LogicErrorMiddleware'
 ]
 
 ROOT_URLCONF = 'MrRight.urls'
