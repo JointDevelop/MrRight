@@ -50,7 +50,7 @@ class User(models.Model):
         if not hasattr(self, '_profile'):
             self._profile, _ = Profile.objects.get_or_create(id=self.id)
         return self._profile
-2440151307LMlmLMlm
+
     @property
     def vip(self):
         ''' user's vip '''
