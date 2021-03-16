@@ -140,9 +140,16 @@ def rewind_someone(uid):
 
 
 def who_like_me(uid):
-    already_swiped_by_me = Swiped.objects.filter(uid=uid).values_list('sid',flat=True)
-    fans_id_list = Swiped.objects\
-        .filter(sid=uid,stype__in=['like','superlike'])\
-        .exclue(uid__in=already_swiped_by_me)\
-        .values_list('uid',flat=True)
+    already_swiped_by_me = Swiped.objects.filter(uid=uid).values_list('sid', flat=True)
+    fans_id_list = Swiped.objects \
+        .filter(sid=uid, stype__in=['like', 'superlike']) \
+        .exclue(uid__in=already_swiped_by_me) \
+        .values_list('uid', flat=True)
     return User.objects.filter(id__in=fans_id_list)
+
+
+def my_friends(uid):
+    ''' get all my friends '''
+    friends = User.objects.filter(id__in=Friend.friend_ids(uid))
+    result = [friend.to_dict() for friend in friends]
+    return result

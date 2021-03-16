@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+
 from common.state_code import OK
 from libs.http import render_json
 from social import tools
@@ -54,7 +55,9 @@ def fans(request):
 
 
 def friends(request):
-    return render_json()
+    ''' get my friends list '''
+    data = tools.my_friends(request.uid)
+    return render_json(code=OK,data=data)
 
 
 def rank(request):
