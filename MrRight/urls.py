@@ -18,14 +18,27 @@ Including another URLconf
 from django.urls import path
 from index import views as index_views
 from user import views as user_views
+from social import views as social_views
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
+
     path('index/', index_views.index),
+
     path('api/user/vcode/fetch', user_views.fetch_vcode),
     path('api/user/vcode/submit', user_views.submit_vcode),
     path('api/user/profile/show', user_views.show_profile),
     path('api/user/profile/update', user_views.update_profile),
     path('qiniu/token', user_views.get_qn_token),
     path('qiniu/callback', user_views.qn_callback),
+
+    path('api/social/rcmd',social_views.rcmd),
+    path('api/social/like',social_views.like),
+    path('api/social/superlike',social_views.superlike),
+    path('api/social/dislike',social_views.dislike),
+    path('api/social/rewind',social_views.rewind),
+    path('api/social/fans',social_views.fans),
+    path('api/social/friends',social_views.friends),
+    path('api/social/rank',social_views.rank),
+
 ]
