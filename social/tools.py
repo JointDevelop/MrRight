@@ -137,3 +137,12 @@ def rewind_someone(uid):
         # update rewind count
         rds.set(rewind_key, rewind_count + 1, 24 * 60 * 60 + 10)
     return None
+
+
+def who_like_me(uid):
+    already_swiped_by_me = Swiped.objects.filter(uid=uid).values_list('sid',flat=True)
+    fans_id_list = Swiped.objects\
+        .filter(sid=uid,stype__in=['like','superlike'])\
+        .exclue(uid__in=already_swiped_by_me)\
+        .values_list('uid',flat=True)
+    return User.objects.filter(id__in=fans_id_list)

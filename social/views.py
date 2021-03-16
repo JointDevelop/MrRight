@@ -37,17 +37,20 @@ def dislike(request):
     ''' left swipe: dislike '''
     sid = int(request.POST.get('sid'))
     tools.dislike_someone(request.id,sid)
-    return render_json()
+    return render_json(code=OK)
 
 
 def rewind(request):
     ''' 3 times per day '''
     tools.rewind_someone(request.uid)
-    return render_json()
+    return render_json(code=OK)
 
 
 def fans(request):
-    return render_json()
+    ''' fans is the people that he/she like/superlike you, but they aren't friends of you and you aren't dislike them'''
+    users = tools.who_like_me(request.uid)
+    result = [user.to_dict() for user in users]
+    return render_json(code=OK,data=result)
 
 
 def friends(request):
