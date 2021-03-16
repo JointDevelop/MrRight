@@ -41,6 +41,8 @@ def dislike(request):
 
 
 def rewind(request):
+    ''' 3 times per day '''
+    tools.rewind_someone(request.uid)
     return render_json()
 
 

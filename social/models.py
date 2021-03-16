@@ -33,8 +33,6 @@ class Swiped(models.Model):
             return False if swipe.stype == 'dislike' else True
 
 
-
-
 class Friend(models.Model):
     ''' relationship of friends '''
     uid1 = models.IntegerField(verbose_name='UID1')
@@ -48,3 +46,8 @@ class Friend(models.Model):
         ''' make friends '''
         uid1, uid2 = sorted([uid1, uid2])
         cls.objects.create(uid1=uid1, uid2=uid2)
+
+    @classmethod
+    def break_off(cls,uid1,uid2):
+        uid1, uid2 = sorted([uid1, uid2])
+        cls.objects.create(uid1=uid1, uid2=uid2).delete()

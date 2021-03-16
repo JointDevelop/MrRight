@@ -1,11 +1,12 @@
 from django.core.exceptions import ValidationError
-from common.keys import RCMD_QUE
+from common.keys import RCMD_QUE, REWIND_K
 from user.models import User
 from user.models import Profile
 import datetime
 from social.models import Swiped
 from social.models import Friend
 from libs.cache import rds
+from django.db.transaction import atomic
 
 
 def recommand_from_queue(uid):
@@ -15,7 +16,7 @@ def recommand_from_queue(uid):
     return User.objects.filter(id__in=uids_list)
 
 
-def recommand_from_db(uid,num):
+def recommand_from_db(uid, num):
     ''' recomand from database '''
     target_profile = Profile.objects.get(id=uid)
     # calculate birthday
@@ -40,7 +41,7 @@ def recommand_users(uid):
     users_que = set(recommand_from_queue(uid))
     remain_nums = 20 - len(users_que)
     if remain_nums > 0:
-        users_db = set(recommand_from_db(uid,remain_nums))
+        users_db = set(recommand_from_db(uid, remain_nums))
         users = users_que | users_db
     return users
 
@@ -58,7 +59,7 @@ def like_someone(uid, sid):
     else:
         swipe.save()
         myKey = RCMD_QUE % uid
-        rds.lrem(myKey,0,sid)
+        rds.lrem(myKey, 0, sid)
     # TODO: 2. check he/she like/super login-User or not, if it is true, then they are friends
     if Swiped.is_liked(sid, uid):
         Friend.make_friends(uid, sid)
@@ -97,7 +98,7 @@ def superlike_someone(uid, sid):
 
 def dislike_someone(uid, sid):
     ''' dislike comeone '''
-    swipe = Swiped(uid=uid,sid=sid,stype='dislike')
+    swipe = Swiped(uid=uid, sid=sid, stype='dislike')
     try:
         swipe.full_clean()
     except ValidationError:
@@ -107,3 +108,33 @@ def dislike_someone(uid, sid):
         swipe.save()
         myKey = RCMD_QUE % uid
         rds.lrem(myKey, 0, sid)
+
+
+def rewind_someone(uid):
+    '''
+    1. rewind latest swipe that in 5 mins
+    2. rewind 3 times per day
+    '''
+    now = datetime.datetime.now()
+    rewind_key = REWIND_K % (uid, now.date())
+    rewind_count = rds.get(rewind_key, 0)
+    if rewind_count >= 3:
+        # TODO: return state code 1007
+        pass
+    # find latest swipe
+    latest_swipe = Swiped.objects.filter(uid=uid).latest('stime')
+    # check this swipe happend within 5 mins or not
+    time_past = now - latest_swipe.stime
+    if time_past.seconds >= 5 * 60:
+        # TODO: return state code 1008
+        pass
+    # make it be a transaction
+    with atomic():
+        # if latest swipe cause 'you are frineds', you have to retrive this friendship
+        if latest_swipe.stype in ['like', 'superlike']:
+            Friend.break_off(uid, latest_swipe.sid)
+        # delete latest swipe record
+        latest_swipe.delete()
+        # update rewind count
+        rds.set(rewind_key, rewind_count + 1, 24 * 60 * 60 + 10)
+    return None
