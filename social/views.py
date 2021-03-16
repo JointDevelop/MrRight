@@ -34,7 +34,9 @@ def superlike(request):
 
 
 def dislike(request):
+    ''' left swipe: dislike '''
     sid = int(request.POST.get('sid'))
+    tools.dislike_someone(request.id,sid)
     return render_json()
 
 

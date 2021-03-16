@@ -1,5 +1,4 @@
 from django.core.exceptions import ValidationError
-
 from common.keys import RCMD_QUE
 from user.models import User
 from user.models import Profile
@@ -94,3 +93,17 @@ def superlike_someone(uid, sid):
         he_or_she_recommand_key = RCMD_QUE % sid
         rds.rpush(he_or_she_recommand_key, uid)
         return False
+
+
+def dislike_someone(uid, sid):
+    ''' dislike comeone '''
+    swipe = Swiped(uid=uid,sid=sid,stype='dislike')
+    try:
+        swipe.full_clean()
+    except ValidationError:
+        print('Error: swipe error ...')
+        return False
+    else:
+        swipe.save()
+        myKey = RCMD_QUE % uid
+        rds.lrem(myKey, 0, sid)
