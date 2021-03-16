@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from common import keys
-from common.state_code import OK, VCODE_SEND_ERROR, VCODE_ERROR, USER_FORM_ERROR
+from common.state_code import OK, VCODE_SEND_ERROR, VCODE_ERROR, USER_FORM_ERROR, VcodeErr, UserFormErr
 from libs.cache import rds
 from libs.qncloud import make_token, get_img_url
 from user.models import User
@@ -49,7 +49,8 @@ def submit_vcode(request):
     else:
         print('vcode is expired...')
         # return JsonResponse({'code': 1001, 'data': None})
-        return render_json(code=VCODE_ERROR, data=None)
+        raise VcodeErr
+        # return render_json(code=VCODE_ERROR, data=None)
 
 
 def show_profile(request):
@@ -80,7 +81,8 @@ def update_profile(request):
         err.update(user_form.errors)
         err.update(profile_form.errors)
         # return JsonResponse({'code': 1003, 'data': err})
-        return render_json(code=USER_FORM_ERROR, data=err)
+        raise UserFormErr(err)
+        # return render_json(code=USER_FORM_ERROR, data=err)
 
 
 def get_qn_token(request):
