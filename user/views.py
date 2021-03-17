@@ -1,4 +1,5 @@
 from common import keys
+from common.keys import PROFILE_KEY, MODEL_KEY
 from common.state_code import OK, VCODE_SEND_ERROR, VCODE_ERROR, USER_FORM_ERROR, VcodeErr, UserFormErr
 from libs.cache import rds
 from libs.qncloud import make_token, get_img_url
@@ -51,7 +52,7 @@ def submit_vcode(request):
         # return JsonResponse({'code': 0, 'data': user.to_dict()})
         return render_json(code=OK, data=user.to_dict())
     else:
-        print('vcode is expired...')
+        # print('vcode is expired...')
         # return JsonResponse({'code': 1001, 'data': None})
         raise VcodeErr
         # return render_json(code=VCODE_ERROR, data=None)
@@ -60,9 +61,17 @@ def submit_vcode(request):
 def show_profile(request):
     # uid = request.session['uid']
     uid = request.uid
-    user = User.objects.get(pk=uid)
+    profile_key = PROFILE_KEY % uid
+    profile = rds.get(profile_key)
+    info_log.debug(f'Profile Read From Cache: User({uid})')
+    if profile is None:
+        user = User.objects.get(pk=uid)
+        profile = user.profile.to_dict()
+        info_log.debug(f'Profile Read From DB: User({uid})')
+        rds.set(profile_key,profile)
+        info_log.debug(f'Profile Cached: User({uid})')
     # return JsonResponse({'code': 0, 'data': user.profile.to_dict()})
-    return render_json(code=OK, data=user.profile.to_dict())
+    return render_json(code=OK, data=profile)
 
 
 def update_profile(request):
@@ -78,6 +87,14 @@ def update_profile(request):
         # We still use update_or_create, because we may close some middlewares for testing, it will cause some problems.
         User.objects.update_or_create(id=uid, defaults=user_form.cleaned_data)
         Profile.objects.update_or_create(id=uid, defaults=profile_form.cleaned_data)
+        #   delete profile cached in redis. when login-user come to profile page again, it will call show_profile(.) and
+        # cache new data again
+        profile_key = PROFILE_KEY % uid
+        model_key_User = MODEL_KEY % ('User', uid)
+        model_key_Profile = MODEL_KEY % ('Profile', uid)
+        rds.delete(profile_key)  # TODO: When rewrite update API of orm, it will be absorted into update API.
+        rds.delete(model_key_User,model_key_Profile) # TODO: same above
+        info_log.debug(f'Updating Profile Lead Cached Profile Delete: User({uid})')
         # return JsonResponse({'code': 0, 'data': None})
         return render_json(code=OK, data=None)
     else:
@@ -113,4 +130,5 @@ def qn_callback(request):
     key = request.POST.get('key')
     avatar_url = get_img_url(key)
     User.objects.filter(uid=uid).update(avatar=avatar_url)
+    rds.delete(MODEL_KEY % ('User',uid))  # TODO: When rewrite update API of orm, it will be absorted into update API.
     return render_json(code=OK, data=avatar_url)

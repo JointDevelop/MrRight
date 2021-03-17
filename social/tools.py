@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError
-from common.keys import RCMD_QUE, REWIND_K
+from common.keys import RCMD_QUE, REWIND_KEY
 from common.state_code import RewindLimit, RewindTimeout
 from user.models import User
 from user.models import Profile
@@ -121,7 +121,7 @@ def rewind_someone(uid):
     2. rewind 3 times per day
     '''
     now = datetime.datetime.now()
-    rewind_key = REWIND_K % (uid, now.date())
+    rewind_key = REWIND_KEY % (uid, now.date())
     rewind_count = rds.get(rewind_key, 0)
     if rewind_count >= 3:
         raise RewindLimit
