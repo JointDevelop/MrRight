@@ -12,5 +12,3 @@ def perm_require(perm_name):
                 raise HaveNotPerm
         return inner
     return outer
-
-2440151307LMlmLMlm

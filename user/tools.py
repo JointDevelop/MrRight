@@ -1,11 +1,13 @@
 import random
-from django.core.cache import cache
-
 from common import keys
 from common import times
 from libs.cache import rds
 from libs.sms import send_sms
 from asyntasks import celery_app
+import logging
+
+
+info_log = logging.getLogger('inf')
 
 
 def create_vcode(length=6):
@@ -35,9 +37,11 @@ def send_vcode(phone):
     key = keys.VCODE_KEY % phone
     vcode = rds.get(key)
     if vcode:
+        info_log.debug(f'vcode: {vcode}')
         return True
     else:
         vcode = create_vcode()
+        info_log.debug(f'vcode: {vcode}')
         result = send_sms(phone, vcode)
         if result:
             rds.set(key, vcode, times.VCODE_EXPIRED)

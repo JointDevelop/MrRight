@@ -8,6 +8,10 @@ from social.models import Swiped
 from social.models import Friend
 from libs.cache import rds
 from django.db.transaction import atomic
+import logging
+
+
+error_log = logging.getLogger('err')
 
 
 def recommand_from_queue(uid):
@@ -53,9 +57,9 @@ def like_someone(uid, sid):
     swipe = Swiped(uid=uid, sid=sid, stype='like')
     try:
         swipe.full_clean()
-    except ValidationError:
+    except ValidationError as excp:
         # TODO: print to log and throw 1006 for multiple swipe
-        print('Error: error swipe ...')
+        error_log.error(f'Swipe Error: {excp}')
         return False
     else:
         swipe.save()
@@ -75,9 +79,9 @@ def superlike_someone(uid, sid):
     swipe = Swiped(uid=uid, sid=sid, stype='superlike')
     try:
         swipe.full_clean()
-    except ValidationError:
+    except ValidationError as excp:
         # TODO: print to log and throw 1006 for multiple swipe
-        print('Error: error swipe ...')
+        error_log.error(f'Swipe Error: {excp}')
         return False
     else:
         swipe.save()
@@ -102,8 +106,8 @@ def dislike_someone(uid, sid):
     swipe = Swiped(uid=uid, sid=sid, stype='dislike')
     try:
         swipe.full_clean()
-    except ValidationError:
-        print('Error: swipe error ...')
+    except ValidationError as excp:
+        error_log.error(f'Swipe Error: {excp}')
         return False
     else:
         swipe.save()

@@ -1,5 +1,3 @@
-from django.http import JsonResponse
-from django.shortcuts import render
 from common import keys
 from common.state_code import OK, VCODE_SEND_ERROR, VCODE_ERROR, USER_FORM_ERROR, VcodeErr, UserFormErr
 from libs.cache import rds
@@ -11,6 +9,10 @@ from django.core.cache import cache
 from user.forms import UserForm
 from user.forms import ProfileForm
 from libs.http import render_json
+import logging
+
+
+info_log = logging.getLogger('inf')
 
 
 def fetch_vcode(request):
@@ -38,11 +40,13 @@ def submit_vcode(request):
     if cached_Vcode and vcode == cached_Vcode:
         try:
             user = User.objects.get(phonenum=phonenum)
+            info_log.info(f'Login: User({user.id})')
         except User.DoesNotExist:
             user = User.objects.create(
                 phonenum=phonenum,
                 nickname=gen_random_nickname()
             )
+            info_log.info(f'Register: User({user.id})')
         request.session['uid'] = user.id
         # return JsonResponse({'code': 0, 'data': user.to_dict()})
         return render_json(code=OK, data=user.to_dict())

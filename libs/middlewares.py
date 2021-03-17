@@ -4,6 +4,9 @@ from django.utils.deprecation import MiddlewareMixin
 from MrRight.settings import STATIC_URL
 from common.state_code import LOGIN_REQUIRED, LogicErr, LoginRequired
 from libs.http import render_json
+import logging
+
+error_log = logging.getLogger('err')
 
 
 class CheckLoginMiddleware(MiddlewareMixin):
@@ -35,4 +38,5 @@ class CheckLoginMiddleware(MiddlewareMixin):
 class LogicErrorMiddleware(MiddlewareMixin):
     def process_exception(self, request, excp):
         if isinstance(excp, LogicErr):
+            error_log.error(f'code: {excp.code} data:{excp.data}')
             return render_json(code=excp.code, data=excp.data)
