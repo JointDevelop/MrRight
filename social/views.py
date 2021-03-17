@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-
+from common.score import HOT_RANK_TOP
 from common.state_code import OK
 from libs.http import render_json
 from social import tools
@@ -65,4 +65,6 @@ def friends(request):
 
 
 def rank(request):
-    return render_json()
+    ''' hot rank for users 50 ahead'''
+    rand_data = tools.get_top_n_rank(HOT_RANK_TOP)
+    return render_json(code=OK,data=rand_data)

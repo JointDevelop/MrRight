@@ -14,3 +14,7 @@ REWIND_KEY = 'Rewind-%S-%S'  # append uid and time
 
 ''' orm model keys for cache '''
 MODEL_KEY = 'Model-%s-%s'  # append table name and uid
+
+
+''' keys for score rank '''
+RANK_KEY = 'HOT_RANK'
