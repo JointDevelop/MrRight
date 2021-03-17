@@ -33,16 +33,16 @@ class User(models.Model):
     vip_id = models.IntegerField(default=VIP_LOWEST_LEVEL, verbose_name='用户购买的VIP的ID')
     vip_expire = models.DateTimeField(default='3000-01-01', verbose_name='VIP过期时间')
 
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'phonenum': self.phonenum,
-            'nickname': self.nickname,
-            'gender': self.gender,
-            'birthday': str(self.birthday),
-            'avatar': self.avatar,
-            'location': self.location
-        }
+    # def to_dict(self):
+    #     return {
+    #         'id': self.id,
+    #         'phonenum': self.phonenum,
+    #         'nickname': self.nickname,
+    #         'gender': self.gender,
+    #         'birthday': str(self.birthday),
+    #         'avatar': self.avatar,
+    #         'location': self.location
+    #     }
 
     @property
     def profile(self):
@@ -82,16 +82,16 @@ class Profile(models.Model):
     only_matched = models.BooleanField(default=True, verbose_name='不让陌生人看我的相册')
     auto_play = models.BooleanField(default=True, verbose_name='自动播放视频')
 
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'dating_location': self.dating_location,
-            'dating_gender': self.dating_gender,
-            'min_distance': self.min_distance,
-            'max_distance': self.max_distance,
-            'min_dating_age': self.min_dating_age,
-            'max_dating_age': self.max_dating_age,
-            'vibration': self.vibration,
-            'only_matched': self.only_matched,
-            'auto_play': self.auto_play
-        }
+    # def to_dict(self):
+    #     return {
+    #         'id': self.id,
+    #         'dating_location': self.dating_location,
+    #         'dating_gender': self.dating_gender,
+    #         'min_distance': self.min_distance,
+    #         'max_distance': self.max_distance,
+    #         'min_dating_age': self.min_dating_age,
+    #         'max_dating_age': self.max_dating_age,
+    #         'vibration': self.vibration,
+    #         'only_matched': self.only_matched,
+    #         'auto_play': self.auto_play
+    #     }

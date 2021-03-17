@@ -11,7 +11,7 @@ from vip.tools import perm_require
 def rcmd(request):
     ''' recommand users to login-User '''
     target_users = tools.recommand_users(request.uid)
-    result = [u.to_dict() for u in target_users]
+    result = [u.to_dict(exclude=('phonenum','vip_id','vip_expire')) for u in target_users]
     return render_json(code=OK, data=result)
 
 
@@ -54,7 +54,7 @@ def rewind(request):
 def fans(request):
     ''' fans is the people that he/she like/superlike you, but they aren't friends of you and you aren't dislike them'''
     users = tools.who_like_me(request.uid)
-    result = [user.to_dict() for user in users]
+    result = [user.to_dict(exclude=('phonenum','vip_id','vip_expire')) for user in users]
     return render_json(code=OK, data=result)
 
 

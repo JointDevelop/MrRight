@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.db.models import query
 from common.keys import MODEL_KEY
@@ -34,9 +36,23 @@ def save(self, force_insert=False, force_update=False, using=None, update_fields
     rds.set(model_key, self, MODEL_CACHE_TIMEOUT)
 
 
+def to_dict(self,exclude=()):
+    ''' model can transform to dict '''
+    attr_dict = {}
+    for field in self._meta.fields:
+        if field.attname not in exclude:
+            key = field.attname
+            value = getattr(self, key)
+            datetime_types = (datetime.date, datetime.time, datetime.datetime)
+            if isinstance(value, datetime_types):
+                value = str(value)
+            attr_dict[key] = value
+    return attr_dict
+
 def model_patch():
     ''' change orm model by 'Monkey Patch'. '''
     models.Model._save = models.Model.save
     models.Model.save = save
     query.QuerySet._get = query.QuerySet.get
     query.QuerySet.get = get
+    models.Model.to_dict = to_dict
