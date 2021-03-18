@@ -12,5 +12,8 @@ QN_TOKEN_EXPIRED = 30*60  # 30 min
 # timeout of model cache
 MODEL_CACHE_TIMEOUT = 30*24*60*60
 
+# datetime string format
+DATETIME_STR_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 

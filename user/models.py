@@ -4,6 +4,7 @@ from django.db import models
 
 
 # Create your models here.
+from common.times import DATETIME_STR_FORMAT
 from common.vip_info import VIP_LOWEST_LEVEL
 from vip.models import Vip
 
@@ -31,7 +32,7 @@ class User(models.Model):
     location = models.CharField(max_length=16, choices=LOCATION, default='北京', verbose_name='常居地')
 
     vip_id = models.IntegerField(default=VIP_LOWEST_LEVEL, verbose_name='用户购买的VIP的ID')
-    vip_expire = models.DateTimeField(default='3000-01-01', verbose_name='VIP过期时间')
+    vip_expire = models.DateTimeField(default='3000-01-01 00:00:00', verbose_name='VIP过期时间')
 
     # def to_dict(self):
     #     return {
@@ -61,7 +62,7 @@ class User(models.Model):
         return self._vip
 
     def is_vip_expired(self):
-        return datetime.datetime.now() >= self.vip_expire
+        return datetime.datetime.now() >= datetime.datetime.strptime(self.vip_expire,DATETIME_STR_FORMAT)
 
     def set_vip(self,vip_id):
         self._vip = Vip.objects.get(id=vip_id)
