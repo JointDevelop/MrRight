@@ -18,7 +18,8 @@ class CheckLoginMiddleware(MiddlewareMixin):
         '/index/',
         '/api/user/vcode/fetch',
         '/api/user/vcode/submit',
-        '/qiniu/callback'
+        '/qiniu/callback',
+        '/api/social/rank'
     ]
 
     def process_request(self, request):
