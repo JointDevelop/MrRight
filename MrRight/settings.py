@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'gp(u0a_enmba*7t0e-u4^mnpqf9lp#d9ovid1lbq%8ag3#c=b8'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -39,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'index',
     'user',
-    'social'
+    'social',
+    'vip'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +60,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'static')  # because all pages are made by JS, so templates will be directed to static file
+            os.path.join(BASE_DIR, 'static')
+            # because all pages are made by JS, so templates will be directed to static file
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -77,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MrRight.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -85,15 +84,14 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE':'django.db.backends.mysql',
-        'USER':'remote_MrRight',
-        'PASSWORD':'123456',
-        'HOST':'localhost',
-        'PORT':3306,
-        'NAME':'MrRight'
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'remote_MrRight',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'NAME': 'MrRight'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -113,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -125,14 +122,69 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+USE_TZ = False  # arnings.warn("DateTimeField %s received a naive datetime (%s)", so we change to be False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
+# 日志配置
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    # 格式配置
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(module)s.%(funcName)s: %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+        'verbose': {
+            'format': ('%(asctime)s %(levelname)s [%(process)d-%(threadName)s] '
+                       '%(module)s.%(funcName)s line %(lineno)d: %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        }
+    },
+    # Handler 配置
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG' if DEBUG else 'ERROR'
+        },
+        'info': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': '%s/logs/info.log' % BASE_DIR,  # 日志保存路径
+            'when': 'midnight',  # 每天切割日志
+            'backupCount': 30,  # 日志保留 30 天
+            'formatter': 'simple',
+            'level': 'DEBUG' if DEBUG else 'INFO',
+        },
+        'error': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': '%s/logs/error.log' % BASE_DIR,  # 日志保存路径
+            'when': 'W0',  # 每周一切割日志
+            'backupCount': 4,  # 日志保留 4 周
+            'formatter': 'verbose',
+            'level': 'ERROR',
+        }
+    },
+    # Logger 配置
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+        },
+        'inf': {
+            'handlers': ['info'],
+            'propagate': True,
+            'level': 'DEBUG' if DEBUG else 'INFO',
+        },
+        'err': {
+            'handlers': ['error'],
+            'propagate': True,
+            'level': 'ERROR',
+        }
+    }
+}

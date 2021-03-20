@@ -8,12 +8,11 @@ USER_FORM_ERROR = 1003  # 用户资料表单数据错误
 SID_ERROR = 1004  # SID 错误
 STYPE_ERR = 1005  # 滑动类型错误
 REPEAT_SWIPE = 1006  # 重复滑动
-
-
 REWIND_LIMIT = 1007  # 反悔次数达到限制
 REWIND_TIMEOUT = 1008  # 反悔超时
-# = 1009  # 当前还没有滑动记录
-# = 1010  # 用户不具有某权限
+NO_SWIPE_RECORD = 1009  # 当前还没有滑动记录
+HAVE_NOT_PERM = 1010  # 用户不具有某权限
+
 
 
 class LogicErr(Exception):
@@ -40,6 +39,5 @@ StypeErr = gen_logic_err('StypeErr',code=1005)
 RepeatSwipe = gen_logic_err('RepeatSwipe',code=1006)
 RewindLimit = gen_logic_err('RewindLimit',code=1007)
 RewindTimeout = gen_logic_err('RewindTimeout',code=1008)
-
-
-
+NoSwipeRecord = gen_logic_err('NoSwipeRecord',code=1009)
+HaveNotPerm = gen_logic_err('HaveNotPerm',code=1010)

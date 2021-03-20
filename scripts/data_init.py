@@ -67,7 +67,8 @@ def create_robots(n):
             user, _ = User.objects.update_or_create(
                 id=uid,
                 defaults={
-                    'phonenum': '%s' % random.randrange(20000000000, 30000000000), # special num will make it easy to recognize the robot user
+                    'phonenum': '%s' % random.randrange(20000000000, 30000000000),
+                    # special num will make it easy to recognize the robot user
                     'nickname': name,
                     'gender': gender,
                     'birthday': date(year, month, day),
@@ -98,7 +99,7 @@ def init_permission():
 
 def init_vip():
     vip_data = (
-        ('非会员', 0, 100000, 0),
+        ('非会员', 0, 36500, 0),
 
         ('青铜会员(月卡)', 1, 30, 10),
         ('青铜会员(半年卡)', 1, 180, 50),

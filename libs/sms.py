@@ -3,6 +3,7 @@ from json import dumps
 import requests
 import time
 
+
 API = 'https://api.mysubmail.com/message/xsend.json'
 APPKEY = 'ea483dd6d5a4e2ca1329e4332897e863'
 

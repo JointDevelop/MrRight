@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
-from common.keys import RCMD_QUE, REWIND_K
+from common.keys import RCMD_QUE, REWIND_KEY, RANK_KEY
 from common.state_code import RewindLimit, RewindTimeout
+from common.score import SWIPE_SCORE
 from user.models import User
 from user.models import Profile
 import datetime
@@ -8,6 +9,9 @@ from social.models import Swiped
 from social.models import Friend
 from libs.cache import rds
 from django.db.transaction import atomic
+import logging
+
+error_log = logging.getLogger('err')
 
 
 def recommand_from_queue(uid):
@@ -53,14 +57,15 @@ def like_someone(uid, sid):
     swipe = Swiped(uid=uid, sid=sid, stype='like')
     try:
         swipe.full_clean()
-    except ValidationError:
+    except ValidationError as excp:
         # TODO: print to log and throw 1006 for multiple swipe
-        print('Error: error swipe ...')
+        error_log.error(f'Swipe Error: {excp}')
         return False
     else:
         swipe.save()
         myKey = RCMD_QUE % uid
         rds.lrem(myKey, 0, sid)
+        rds.zincrby(RANK_KEY, SWIPE_SCORE['like'], sid)
     # TODO: 2. check he/she like/super login-User or not, if it is true, then they are friends
     if Swiped.is_liked(sid, uid):
         Friend.make_friends(uid, sid)
@@ -75,14 +80,15 @@ def superlike_someone(uid, sid):
     swipe = Swiped(uid=uid, sid=sid, stype='superlike')
     try:
         swipe.full_clean()
-    except ValidationError:
+    except ValidationError as excp:
         # TODO: print to log and throw 1006 for multiple swipe
-        print('Error: error swipe ...')
+        error_log.error(f'Swipe Error: {excp}')
         return False
     else:
         swipe.save()
         myKey = RCMD_QUE % uid
         rds.lrem(myKey, 0, sid)
+        rds.zincrby(RANK_KEY, SWIPE_SCORE['superlike'], sid)
     # TODO: 2.1 check he/she like/super login-User or not, if it is true, then they are friends.
     # TODO: 2.2 if he/she is not dislike you, then add he/she to his/her recommand-list.
     liked = Swiped.is_liked(sid, uid)
@@ -102,13 +108,14 @@ def dislike_someone(uid, sid):
     swipe = Swiped(uid=uid, sid=sid, stype='dislike')
     try:
         swipe.full_clean()
-    except ValidationError:
-        print('Error: swipe error ...')
+    except ValidationError as excp:
+        error_log.error(f'Swipe Error: {excp}')
         return False
     else:
         swipe.save()
         myKey = RCMD_QUE % uid
         rds.lrem(myKey, 0, sid)
+        rds.zincrby(RANK_KEY, SWIPE_SCORE['dislike'], sid)
 
 
 def rewind_someone(uid):
@@ -117,7 +124,7 @@ def rewind_someone(uid):
     2. rewind 3 times per day
     '''
     now = datetime.datetime.now()
-    rewind_key = REWIND_K % (uid, now.date())
+    rewind_key = REWIND_KEY % (uid, now.date())
     rewind_count = rds.get(rewind_key, 0)
     if rewind_count >= 3:
         raise RewindLimit
@@ -152,4 +159,23 @@ def my_friends(uid):
     ''' get all my friends '''
     friends = User.objects.filter(id__in=Friend.friend_ids(uid))
     result = [friend.to_dict() for friend in friends]
+    return result
+
+
+def get_top_n_rank(top_n):
+    ''' get top n on the hot rank '''
+    # find top_n users
+    rank_data = rds.zrevrange(RANK_KEY, 0, top_n - 1, withscores=True)
+    cleaned_rank = [[int(uid), int(score)] for uid, score in rank_data]
+    uids_list = [uid for uid, _ in cleaned_rank]
+    users = User.objects.filter(id__in=uids_list)
+    users = sorted(users, key=lambda user: uids_list.index(user.id))
+    # construct detail result to return
+    result = []
+    exclude_fields = ['phonenum', 'birthday', 'location', 'vip_id', 'vip_expire']
+    for idx, user in enumerate(users):
+        info = user.to_dict(exclude=exclude_fields)
+        info['rank'] = idx + 1
+        info['score'] = cleaned_rank[idx][1]
+        result.append(info)
     return result
