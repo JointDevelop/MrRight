@@ -36,6 +36,7 @@ def submit_vcode(request):
     phonenum = request.POST.get('phonenum')
     vcode = request.POST.get('vcode')
     key = keys.VCODE_KEY % phonenum
+    print(key)
     cached_Vcode = rds.get(key).decode('utf8')
     print(phonenum, vcode, key, cached_Vcode)
     if cached_Vcode and vcode == cached_Vcode:
